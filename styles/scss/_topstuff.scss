@@ -1,0 +1,38 @@
+@import url('../icons/fontawesome/css/all.min.css');
+
+@font-face {
+    font-family: nunito;
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+	font-family: $font-sans;
+	background-color: #eee;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+::selection {
+    background-color: #ddd;
+    color: $primary-color;
+}
+
+.container {
+    background: white;
+    height: 100vh;
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}

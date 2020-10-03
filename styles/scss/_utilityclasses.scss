@@ -1,0 +1,204 @@
+/* Margin and Padding */
+$allspace: (0, 1, 2, 3, 4, 5, 6);
+
+@function addnum($space, $num) {
+    $result : $space + $num;
+    @return $result;
+}
+
+@each $space in $allspace {
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+    .my-#{$space} {
+        margin-top: #{$space}rem;
+        margin-bottom: #{$space}rem;
+    }
+    
+    .mx-#{$space} {
+        margin-left: #{$space}rem;
+        margin-right: #{$space}rem;
+    }
+    
+    .mr-#{$space} {
+        margin-right: #{$space}rem;
+    }
+    
+    .ml-#{$space} {
+        margin-left: #{$space}rem;
+    }
+    
+    .mt-#{$space} {
+        margin-top: #{$space}rem;
+    }
+    
+    .mb-#{$space} {
+        margin-bottom: #{$space}rem;
+    }
+    
+    
+    
+    .m-#{$space}-5 {
+        margin: #{addnum($space, 0.5)}rem;
+    }
+    .my-#{$space}-5 {
+        margin-top: #{addnum($space, 0.5)}rem;
+        margin-bottom: #{addnum($space, 0.5)}rem;
+    }
+    
+    .mx-#{$space}-5 {
+        margin-left: #{addnum($space, 0.5)}rem;
+        margin-right: #{addnum($space, 0.5)}rem;
+    }
+    
+    .mr-#{$space}-5 {
+        margin-right: #{addnum($space, 0.5)}rem;
+    }
+    
+    .ml-#{$space}-5 {
+        margin-left: #{addnum($space, 0.5)}rem;
+    }
+    
+    .mt-#{$space}-5 {
+        margin-top: #{addnum($space, 0.5)}rem;
+    }
+    
+    .mb-#{$space}-5 {
+        margin-bottom: #{addnum($space, 0.5)}rem;
+    }
+    
+    
+    
+    .m-#{$space}-75 {
+        margin: #{addnum($space, 0.75)}rem;
+    }
+    .my-#{$space}-75 {
+        margin-top: #{addnum($space, 0.75)}rem;
+        margin-bottom: #{addnum($space, 0.75)}rem;
+    }
+    
+    .mx-#{$space}-75 {
+        margin-left: #{addnum($space, 0.75)}rem;
+        margin-right: #{addnum($space, 0.75)}rem;
+    }
+    
+    .mr-#{$space}-75 {
+        margin-right: #{addnum($space, 0.75)}rem;
+    }
+    
+    .ml-#{$space}-75 {
+        margin-left: #{addnum($space, 0.75)}rem;
+    }
+    
+    .mt-#{$space}-75 {
+        margin-top: #{addnum($space, 0.75)}rem;
+    }
+    
+    .mb-#{$space}-75 {
+        margin-bottom: #{addnum($space, 0.75)}rem;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+    .py-#{$space} {
+        padding-top: #{$space}rem;
+        padding-bottom: #{$space}rem;
+    }
+    
+    .px-#{$space} {
+        padding-left: #{$space}rem;
+        padding-right: #{$space}rem;
+    }
+    
+    .pr-#{$space} {
+        padding-right: #{$space}rem;
+    }
+    
+    .pl-#{$space} {
+        padding-left: #{$space}rem;
+    }
+    
+    .pt-#{$space} {
+        padding-top: #{$space}rem;
+    }
+    
+    .pb-#{$space} {
+        padding-bottom: #{$space}rem;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .p-#{$space}-5 {
+        padding: #{addnum($space, 0.5)}rem;
+    }
+    .py-#{$space}-5 {
+        padding-top: #{addnum($space, 0.5)}rem;
+        padding-bottom: #{addnum($space, 0.5)}rem;
+    }
+    
+    .px-#{$space}-5 {
+        padding-left: #{addnum($space, 0.5)}rem;
+        padding-right: #{addnum($space, 0.5)}rem;
+    }
+    
+    .pr-#{$space}-5 {
+        padding-right: #{addnum($space, 0.5)}rem;
+    }
+    
+    .pl-#{$space}-5 {
+        padding-left: #{addnum($space, 0.5)}rem;
+    }
+    
+    .pt-#{$space}-5 {
+        padding-top: #{addnum($space, 0.5)}rem;
+    }
+    
+    .pb-#{$space}-5 {
+        padding-bottom: #{addnum($space, 0.5)}rem;
+    }
+    
+    
+    
+    .p-#{$space}-75 {
+        padding: #{addnum($space, 0.75)}rem;
+    }
+    .py-#{$space}-75 {
+        padding-top: #{addnum($space, 0.75)}rem;
+        padding-bottom: #{addnum($space, 0.75)}rem;
+    }
+    
+    .px-#{$space}-75 {
+        padding-left: #{addnum($space, 0.75)}rem;
+        padding-right: #{addnum($space, 0.75)}rem;
+    }
+    
+    .pr-#{$space}-75 {
+        padding-right: #{addnum($space, 0.75)}rem;
+    }
+    
+    .pl-#{$space}-75 {
+        padding-left: #{addnum($space, 0.75)}rem;
+    }
+    
+    .pt-#{$space}-75 {
+        padding-top: #{addnum($space, 0.75)}rem;
+    }
+    
+    .pb-#{$space}-75 {
+        padding-bottom: #{addnum($space, 0.75)}rem;
+    }
+
+}
+
+

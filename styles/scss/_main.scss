@@ -1,0 +1,31 @@
+.main {
+//    background: purple;
+    border: 2rem solid #eee;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    overflow-x: hidden;
+    margin: 1rem;
+    background: #eee;
+    border-left-width: 1rem;
+    border-right-width: 1rem;
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+
+    
+    &-display {
+        color: white;
+        background: $primary-color;
+//        background: white;
+        height: 120%;
+        width: 95%;
+        margin: 0rem auto;
+        border-radius: 3.5rem;
+        padding: 1.5rem;
+    }
+}

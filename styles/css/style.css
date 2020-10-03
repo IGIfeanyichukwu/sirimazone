@@ -1,10 +1,193 @@
-/*>>>>>VARIABLES<<<<<<*/
+@import url("../icons/fontawesome/css/all.min.css");
+@font-face {
+  font-family: nunito;
+  src: url("../fonts/Nunito-Regular.ttf");
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #eee;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+::selection {
+  background-color: #ddd;
+  color: rgba(34, 37, 70, 0.7);
+}
+
+.container {
+  background: white;
+  height: 100vh;
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.header {
+  background: white;
+  padding: 2.5rem 2rem 2.5rem 3rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.header::-webkit-scrollbar {
+  display: none;
+}
+.header form {
+  background: #eee;
+  width: 100%;
+  border-radius: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+.header form input[type=search] {
+  background: transparent;
+  outline: none;
+  border: 0px solid transparent;
+  height: 3rem;
+  width: 100%;
+}
+.header form button {
+  background: white;
+  outline: 0;
+  border: 0px solid transparent;
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  padding: 3px 6px 4px 8px;
+  font-weight: 500;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  color: #222546;
+}
+.header form button:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  color: #fc6917;
+}
+
+.header h2 {
+  text-align: center;
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #222546;
+}
+.header h2 span {
+  color: #fc6917;
+}
+
+.nav {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.nav ul li {
+  list-style: none;
+  margin: 0rem 3rem 1rem 1rem;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.nav ul li a:hover {
+  color: #fc6917;
+}
+.nav ul li a:hover i {
+  visibility: visible;
+  color: #fc6917;
+}
+.nav ul li a i {
+  margin-right: 1rem;
+  visibility: hidden;
+}
+.nav ul li a span {
+  width: 0rem;
+  margin-right: 0.8rem;
+}
+
+.random-movie-container {
+  background: #eee;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem 1.5rem;
+  margin-top: 1rem;
+}
+.random-movie-container h3 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-align: center;
+  color: #222546;
+}
+.random-movie-container div {
+  background: white;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.random-movie-container div ul {
+  text-align: center;
+  padding: 0.1rem 0;
+}
+.random-movie-container div ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+.random-movie-container div ul li a {
+  color: rgba(0, 0, 0, 0.7);
+}
+.random-movie-container div ul li a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.login-icon-wrap {
+  text-align: center;
+  margin-top: 1rem;
+}
+.login-icon-wrap div:nth-child(1) {
+  color: #fc6917;
+  margin-bottom: 0.5rem;
+}
+.login-icon-wrap div:nth-child(1) span {
+  background: #eee;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.main {
+  border: 2rem solid #eee;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  overflow-x: hidden;
+  margin: 1rem;
+  background: #eee;
+  border-left-width: 1rem;
+  border-right-width: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main-display {
+  color: white;
+  background: rgba(34, 37, 70, 0.7);
+  height: 120%;
+  width: 95%;
+  margin: 0rem auto;
+  border-radius: 3.5rem;
+  padding: 1.5rem;
 }
