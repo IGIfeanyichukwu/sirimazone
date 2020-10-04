@@ -13,7 +13,9 @@ echo '<h2>This is the admin page</h2>';
 
 
 } else {
-    echo '<h2>You need to login in</h2>';
+    
+    require_once('inc/login.php');
+    
 }
 
 require_once '../temp/footer.php';

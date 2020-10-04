@@ -4,7 +4,11 @@
   "description": "Sirimazone is an online movie store.",
   "main": "scripts/js/script.js",
   "scripts": {
-    "build:sass": "sass --watch styles/scss/style.scss styles/css/style.css --no-source-map"
+    "build:sass": "sass --watch styles/scss/style.scss styles/css/style.css --no-source-map",
+    "build:js": "parcel watch -d ./scripts/prod -o app.js --no-hmr --no-autoinstall --no-cache --no-source-maps ./scripts/dev/script.js",
+    "php-server": "php -S localhost:4040",
+    "dev-scripts": "start npm run php-server && npm run build:sass && start npm run build:js",
+    "dev-scripts-no-php-server": "npm run build:sass && start npm run build:js"
   },
   "keywords": [
     "movie",
