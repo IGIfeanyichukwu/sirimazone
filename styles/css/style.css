@@ -168,11 +168,11 @@ body {
 }
 
 .main {
-  border: 2rem solid #eee;
+  border: 0rem solid #eee;
   border-top-right-radius: 3rem;
   border-bottom-right-radius: 3rem;
   overflow-x: hidden;
-  margin: 1rem;
+  margin: 1rem 1.5rem;
   background: #eee;
   border-left-width: 1rem;
   border-right-width: 1rem;
@@ -183,11 +183,12 @@ body {
   display: none;
 }
 .main-display {
-  color: white;
-  background: rgba(34, 37, 70, 0.7);
-  height: 120%;
+  color: black;
+  background: white;
+  height: 80%;
   width: 95%;
-  margin: 0rem auto;
+  margin: 2rem auto;
   border-radius: 3.5rem;
   padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
