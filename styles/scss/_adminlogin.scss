@@ -1,6 +1,122 @@
 .admin-access-auth-container {
-	background: orange;
-	height: calc(100vh - 9.1rem);
+	// background: orange;
+	height: calc(100vh - 9.2rem);
+	position: relative;
+	overflow: scroll;
+	// padding: 4rem 0;
+
+	@include remove-scroll;
+
+}
+
+.admin-access-auth-wrap {
+	background: $primary-color2;
+	color: white;
+	width: 40rem;
+	max-width: 100%;
+	padding: 1rem 0;
+	border-radius: 1rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+
+	h1 {
+		font-family: nunito, $font-sans;
+		text-align: center;
+	}
+}
+
+.signin-form {
+	text-align: center;
+
+	h3 {
+		font-family: nunito, $font-sans;
+		color: $sec-color;
+	}
+
+	.other-opt {
+		// background-color: green;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 5%;
+		padding-bottom: 2rem;
+
+		span {
+			opacity: 0.8;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.signup-form {
+	text-align: center;
+
+	h3 {
+		font-family: nunito, $font-sans;
+		color: $sec-color;
+	}
+
+	.other-opt {
+		padding-bottom: 2rem;
+
+		span {
+			opacity: 0.8;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	} 
+
+}
+
+.input-fc {
+	label {
+		display: block;
+	}
+
+	input {
+		width: 90%;
+		margin: 1rem 0;
+		height: 4rem;
+		padding-left: 1rem;	
+		font-size: 1.5rem;
+		border-radius: 1rem;
+		outline: 0;
+		border: 0;
+		color: $primary-color2;
+	}
 }
 
 
+.open-signin, .open-signup {
+	cursor: pointer;
+}
+
+
+.submit-fc {
+	margin: 1rem 0 0.3rem;
+
+	input[type="submit"] {
+		background: $sec-color;
+		border: 0;
+		// width: 20rem;
+		width: 90%;
+		height: 4rem;
+		border-radius: 1rem;
+		cursor: pointer;
+		color: white;
+		font-size: 2rem;
+		padding-bottom: 0.2rem;
+		font-family: nunito, $font-sans;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}

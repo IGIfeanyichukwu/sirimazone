@@ -1,4 +1,8 @@
 @import url("../icons/fontawesome/css/all.min.css");
+.display-none {
+  display: none;
+}
+
 @font-face {
   font-family: nunito;
   src: url("../fonts/Nunito-Regular.ttf");
@@ -193,6 +197,104 @@ body {
 }
 
 .admin-access-auth-container {
-  background: orange;
-  height: calc(100vh - 9.1rem);
+  height: calc(100vh - 9.2rem);
+  position: relative;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.admin-access-auth-container::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-access-auth-wrap {
+  background: #222546;
+  color: white;
+  width: 40rem;
+  max-width: 100%;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.admin-access-auth-wrap h1 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-align: center;
+}
+
+.signin-form {
+  text-align: center;
+}
+.signin-form h3 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #fc6917;
+}
+.signin-form .other-opt {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  padding-bottom: 2rem;
+}
+.signin-form .other-opt span {
+  opacity: 0.8;
+}
+.signin-form .other-opt span:hover {
+  opacity: 1;
+}
+
+.signup-form {
+  text-align: center;
+}
+.signup-form h3 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #fc6917;
+}
+.signup-form .other-opt {
+  padding-bottom: 2rem;
+}
+.signup-form .other-opt span {
+  opacity: 0.8;
+}
+.signup-form .other-opt span:hover {
+  opacity: 1;
+}
+
+.input-fc label {
+  display: block;
+}
+.input-fc input {
+  width: 90%;
+  margin: 1rem 0;
+  height: 4rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  outline: 0;
+  border: 0;
+  color: #222546;
+}
+
+.open-signin, .open-signup {
+  cursor: pointer;
+}
+
+.submit-fc {
+  margin: 1rem 0 0.3rem;
+}
+.submit-fc input[type=submit] {
+  background: #fc6917;
+  border: 0;
+  width: 90%;
+  height: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 0.2rem;
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.submit-fc input[type=submit]:hover {
+  opacity: 0.9;
 }

@@ -4,7 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Sirimazone Site</title>
+    <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/mdtoast.css'; ?>">
+
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; ?>">
+
+	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/mdtoast.min.js'; ?>"></script>
+
 </head>
 <body>
 <div class="container">

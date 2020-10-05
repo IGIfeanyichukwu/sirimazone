@@ -1,1 +1,5 @@
-console.log("This is from sirimazone script.js");
+import adminlogin from './adminlogin';
+
+console.log("SIRIMAZONE");
+
+adminlogin();
