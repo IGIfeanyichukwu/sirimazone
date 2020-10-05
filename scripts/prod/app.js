@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"adminlogin.js":[function(require,module,exports) {
+})({"adminLogin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,8 +125,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var adminlogin = function adminlogin() {
-  console.log('From adminlogin.js');
+var adminLogin = function adminLogin() {
+  // console.log('From adminlogin.js');
   var openSignup = document.querySelector('.open-signup');
   var openSignin = document.querySelector('.open-signin');
   var signupForm = document.querySelector('.signup-form');
@@ -141,26 +141,17 @@ var adminlogin = function adminlogin() {
     signinForm.classList.remove('display-none');
     signupForm.classList.add('display-none');
   };
-  /*Test*/
-
-
-  var mdBtn = document.querySelector('.mdbtn');
-
-  mdBtn.onclick = function () {
-    console.log('doing md stuff');
-    mdtoast('This is a toast message.');
-  };
 };
 
-var _default = adminlogin;
+var _default = adminLogin;
 exports.default = _default;
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
-var _adminlogin = _interopRequireDefault(require("./adminlogin"));
+var _adminLogin = _interopRequireDefault(require("./adminLogin"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("SIRIMAZONE");
-(0, _adminlogin.default)();
-},{"./adminlogin":"adminlogin.js"}]},{},["script.js"], null)
+(0, _adminLogin.default)();
+},{"./adminLogin":"adminLogin.js"}]},{},["script.js"], null)

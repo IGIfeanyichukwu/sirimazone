@@ -1,5 +1,5 @@
-import adminlogin from './adminlogin';
+import adminLogin from './adminLogin';
 
 console.log("SIRIMAZONE");
 
-adminlogin();
+adminLogin();

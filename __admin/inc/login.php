@@ -3,8 +3,6 @@
 <div class="admin-access-auth-container">
 
 
-    <button class="mdbtn">mdtoast</button>
-
 <div class="admin-access-auth-wrap">
      
      <h1>Admin Panel</h1>
