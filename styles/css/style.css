@@ -197,7 +197,7 @@ body {
 }
 
 .admin-access-auth-container {
-  height: calc(100vh - 9.2rem);
+  height: calc(100vh - 9rem);
   position: relative;
   overflow: scroll;
   -ms-overflow-style: none;

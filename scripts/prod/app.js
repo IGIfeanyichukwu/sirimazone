@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"adminLogin.js":[function(require,module,exports) {
+})({"adminAccess.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,7 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var adminLogin = function adminLogin() {
+var adminAccess = function adminAccess() {
   // console.log('From adminlogin.js');
   var openSignup = document.querySelector('.open-signup');
   var openSignin = document.querySelector('.open-signin');
@@ -143,15 +143,15 @@ var adminLogin = function adminLogin() {
   };
 };
 
-var _default = adminLogin;
+var _default = adminAccess;
 exports.default = _default;
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
-var _adminLogin = _interopRequireDefault(require("./adminLogin"));
+var _adminAccess = _interopRequireDefault(require("./adminAccess"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("SIRIMAZONE");
-(0, _adminLogin.default)();
-},{"./adminLogin":"adminLogin.js"}]},{},["script.js"], null)
+(0, _adminAccess.default)();
+},{"./adminAccess":"adminAccess.js"}]},{},["script.js"], null)

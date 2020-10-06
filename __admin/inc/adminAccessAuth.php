@@ -1,4 +1,18 @@
+<?php
+if (isset($_POST['signup-btn'])) {
+    
 
+
+} else if(isset($_POST['signin-btn'])) {
+
+    echo 'Love of God';
+    require_once('handleSignin.php');
+
+}
+
+?>
+
+<!-- FOR LOGIN AND SIGN IN -->
 
 <div class="admin-access-auth-container">
 
@@ -12,7 +26,7 @@
     <div class="signin-form">   
      <h3>Sign in</h3>
 
-     <form action="index.php" method="post" autocomplete="off">
+     <form action="" method="post" autocomplete="off">
 
      	<div class="input-fc">
          <!-- <label>Username</label> -->
@@ -40,7 +54,7 @@
 
      <h3>Sign up</h3>
 
-     <form action="index.php" method="post" autocomplete="off">
+     <form action="" method="post" autocomplete="off">
 
      	<div class="input-fc">
          <!-- <label>Username</label> -->

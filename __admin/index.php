@@ -3,6 +3,12 @@ session_start();
 
 $stepToRoot = '../';
 
+require '../classes/Dbase.php';
+require '../classes/Login.php';
+
+ $database = new Dbase();
+ $db = $database->connect();
+ $login = new Login($db);
 
 
 require_once '../temp/header.php';
@@ -14,7 +20,7 @@ echo '<h2>This is the admin page</h2>';
 
 } else {
     
-    require_once('inc/login.php');
+    require_once('inc/adminAccessAuth.php');
     
 }
 
