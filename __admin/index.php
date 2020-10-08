@@ -10,13 +10,17 @@ require '../classes/Login.php';
  $db = $database->connect();
  $login = new Login($db);
 
-
 require_once '../temp/header.php';
+
+
+//check if the user is logged in
 if(isset($_SESSION['is_logged_into_sirimazone'])) {
-    //display index page if the user is logged in
 
-echo '<h2>This is the admin page</h2>';
+	//get username
+	$loggedInUsername = $_SESSION['logged_in_username'];
 
+	//redirect to profile page
+	header('Location: profile/'.$loggedInUsername);
 
 } else {
     
@@ -25,3 +29,5 @@ echo '<h2>This is the admin page</h2>';
 }
 
 require_once '../temp/footer.php';
+
+?>

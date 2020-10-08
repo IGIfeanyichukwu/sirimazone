@@ -4,7 +4,7 @@
  * Author: Dionlee Uy
  * Email: dionleeuy@gmail.com
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+/*@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");*/
 .mdtoast {
   position: fixed;
   display: flex;
@@ -16,7 +16,7 @@
   bottom: 24px;
   padding: 0 24px;
   color: #fff;
-  font-family: Roboto, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
   font-size: 16px;
   text-align: left;
   outline: none;

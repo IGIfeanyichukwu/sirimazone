@@ -1,0 +1,15 @@
+ReWriteEngine On
+
+
+RewriteRule ^/?$ index.php
+RewriteRule ^__admin/profile?$ __admin/profile.php
+RewriteRule ^__admin/test?$ __admin/test.php
+RewriteRule ^__admin/logout?$ __admin/logout.php
+
+
+RewriteRule ^__admin/profile/([0-9a-zA-Z]+) __admin/profile.php?adminuser=$1
+
+
+
+ 
+

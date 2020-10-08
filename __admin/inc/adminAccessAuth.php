@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['signup-btn'])) {
-    
 
+    require_once('handleSignup.php');
 
 } else if(isset($_POST['signin-btn'])) {
 
@@ -63,7 +63,7 @@ if (isset($_POST['signup-btn'])) {
 
      <div class="input-fc">
          <!-- <label>Email</label> -->
-         <input type="text" name="sigup-email" value="" required autocomplete="off" placeholder="Email">
+         <input type="text" name="signup-email" value="" required autocomplete="off" placeholder="Email">
      </div>
      
      <div class="input-fc">
@@ -78,7 +78,12 @@ if (isset($_POST['signup-btn'])) {
 
      <div class="input-fc">
          <!-- <label>Access ID</label> -->
-         <input type="text" name="signup-accessid" value="" required autocomplete="off" placeholder="Access ID">
+         <input type="text" name="signup-accessname" value="" required autocomplete="off" placeholder="Access Name">
+     </div>
+
+     <div class="input-fc">
+         <!-- <label>Access ID</label> -->
+         <input type="text" name="signup-accesskey" value="" required autocomplete="off" placeholder="Access Key">
      </div>
 
      <div class="other-opt">
