@@ -5,7 +5,6 @@ if (isset($_POST['signup-btn'])) {
 
 } else if(isset($_POST['signin-btn'])) {
 
-    echo 'Love of God';
     require_once('handleSignin.php');
 
 }

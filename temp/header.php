@@ -6,12 +6,13 @@
 	<title>Sirimazone Site</title>
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/mdtoast.css'; ?>">
 
-    <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; ?>">
+    <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; echo '?v='.time() ?>">
 
 	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/mdtoast.min.js'; ?>"></script>
 
 </head>
 <body>
+<div class="modal-bg"></div>
 <div class="container">
     <header class="header">
 	<h2>Sirima<span>zone</span></h2>
@@ -44,11 +45,12 @@
 	    
 	    
 	</div>
-	
+<?php if(isset($_SESSION['logged_in_username'])) { ?>
 	<div class="login-icon-wrap">
        <div><span><i class="fas fa-user"></i></span></div> 
-       <div><span>Guest</span></div>
+       <div><span><?php echo '@'; echo $_SESSION['logged_in_username']; ?></span></div>
 	</div>
+<?php } ?>
 	
 	</header>
 	<div class="main">

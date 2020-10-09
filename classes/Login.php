@@ -70,14 +70,6 @@ class Login { //login class (contains method that enables login)
 
 
 
-	/*
-
-	UPDATE `sirimazone_access_id` SET `access_id_creator` = '\'IFEX\'' WHERE `sirimazone_access_id`.`id` = 2; 
-
-	INSERT INTO `sirimazone_admins` (`id`, `username`, `email`, `password`, `hash`, `is_email_active`) VALUES (NULL, 'a user', 'his email', 'his password', '', '0');
-
-
-	*/
 
 	//checks if an admin exist with given username and email
 
@@ -155,7 +147,7 @@ class Login { //login class (contains method that enables login)
 	public static function logout() {
 		session_start();
 		session_destroy();
-		header('Location: ../index.php');
+		header('Location: ../');
 	}
 
 	public function escapeString($string) {

@@ -1,12 +1,12 @@
 <?php 
 
 // Get all the inputs
-$signupUsername = $login->escapeString($_POST['signup-username']);
-$signupEmail = $login->escapeString($_POST['signup-email']);
-$signupPassword1 = $login->escapeString($_POST['signup-password1']);
-$signupPassword2 = $login->escapeString($_POST['signup-password2']);
-$signupAccessName = $login->escapeString($_POST['signup-accessname']);
-$signupAccessKey = $login->escapeString($_POST['signup-accesskey']);
+$signupUsername = trim($login->escapeString($_POST['signup-username']));
+$signupEmail = trim($login->escapeString($_POST['signup-email']));
+$signupPassword1 = trim($login->escapeString($_POST['signup-password1']));
+$signupPassword2 = trim($login->escapeString($_POST['signup-password2']));
+$signupAccessName = trim($login->escapeString($_POST['signup-accessname']));
+$signupAccessKey = trim($login->escapeString($_POST['signup-accesskey']));
 
 
 if($signupPassword1 != $signupPassword2) {
@@ -14,6 +14,16 @@ if($signupPassword1 != $signupPassword2) {
 	echo "<script>
 
 		mdtoast('Different Passwords', {
+			duration: 3000,
+  			type: 'error'
+		});
+	</script>";
+
+} else if(preg_match("/\W/", $signupUsername)) {
+
+	echo "<script>
+
+		mdtoast('Username can only contain letter, number or underscore values', {
 			duration: 3000,
   			type: 'error'
 		});

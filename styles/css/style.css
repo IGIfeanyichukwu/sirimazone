@@ -29,6 +29,24 @@ body {
   color: rgba(34, 37, 70, 0.7);
 }
 
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show-modal-bg {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
 .container {
   background: white;
   height: 100vh;
@@ -160,6 +178,7 @@ body {
 .login-icon-wrap {
   text-align: center;
   margin-top: 1rem;
+  padding-top: 1rem;
 }
 .login-icon-wrap div:nth-child(1) {
   color: #fc6917;
@@ -169,6 +188,9 @@ body {
   background: #eee;
   padding: 0.5rem 0.8rem;
   border-radius: 1rem;
+}
+.login-icon-wrap div:nth-child(2) {
+  font-size: 1.4rem;
 }
 
 .main {
@@ -191,7 +213,8 @@ body {
   background: white;
   width: 95%;
   margin: 2rem auto;
-  border-radius: 3.5rem;
+  border-top-right-radius: 3.5rem;
+  border-bottom-right-radius: 3.5rem;
   padding: 1.5rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }

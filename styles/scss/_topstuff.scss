@@ -28,6 +28,24 @@ body {
     // border: 1px solid $sec-color;
 }
 
+.modal-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show-modal-bg {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
 .container {
     background: white;
     height: 100vh;
