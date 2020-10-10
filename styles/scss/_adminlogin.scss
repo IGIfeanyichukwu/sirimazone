@@ -1,8 +1,7 @@
 .admin-access-auth-container {
 	// background: orange;
-	height: calc(100vh - 9rem);
 	position: relative;
-	overflow: scroll;
+	// overflow: scroll;
 	// padding: 4rem 0;
 
 	@include remove-scroll;
@@ -17,9 +16,8 @@
 	padding: 1rem 0;
 	border-radius: 1rem;
 	position: absolute;
-	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 0%);
 
 
 	h1 {

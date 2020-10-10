@@ -28,6 +28,19 @@ class Login { //login class (contains method that enables login)
         return $stmt;
 	}
 
+	public  function getAllAdminUser() {
+
+		$query = 'SELECT * FROM '.$this->adminTable;
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+        //Execute query
+        $stmt->execute();
+
+        return $stmt;
+	}
+
 	public function getAccessId($accessName = null) {
 
 		$query = 'SELECT * FROM '. $this->accessIdTable.' WHERE access_name = :access_name';

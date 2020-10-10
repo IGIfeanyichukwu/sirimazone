@@ -102,7 +102,7 @@ if($signupPassword1 != $signupPassword2) {
 	       				}
 
 						$_SESSION['is_logged_into_sirimazone'] = true;
-	                    $_SESSION['logged_in_username'] = $signupUsername;
+	                    $_SESSION['logged_in_sirimazone_username'] = $signupUsername;
 	            		$_SESSION['just_signed_up'] = true;
 
 	            		//redirect to profile page

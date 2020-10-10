@@ -23,6 +23,7 @@
         // background: $primary-color;
         background: white;
         // height: 80%;
+        min-height: calc(100vh - 6rem);
         width: 95%;
         margin: 2rem auto;
         border-top-right-radius: 3.5rem;

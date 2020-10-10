@@ -34,7 +34,7 @@ if (isset($_POST['signup-btn'])) {
 
      <div class="input-fc">
          <!-- <label>Password</label> -->
-         <input type="password" name="signin-password" value="" required autocomplete="new-password" placeholder="password">
+         <input type="password" name="signin-password" value="" required autocomplete="new-password" placeholder="Password">
      </div>
      <div class="other-opt">
      	<span class="open-signup"><small>Sign Up</small></span> <span><small>Forgot your password?</small></span>

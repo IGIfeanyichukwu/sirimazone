@@ -17,7 +17,7 @@ require_once '../temp/header.php';
 if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 	//get username
-	$loggedInUsername = $_SESSION['logged_in_username'];
+	$loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
 
 	//redirect to profile page
 	header('Location: profile/'.$loggedInUsername);

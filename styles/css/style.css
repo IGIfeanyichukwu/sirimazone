@@ -211,6 +211,7 @@ body {
 .main-display {
   color: black;
   background: white;
+  min-height: calc(100vh - 6rem);
   width: 95%;
   margin: 2rem auto;
   border-top-right-radius: 3.5rem;
@@ -220,9 +221,7 @@ body {
 }
 
 .admin-access-auth-container {
-  height: calc(100vh - 9rem);
   position: relative;
-  overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -238,9 +237,8 @@ body {
   padding: 1rem 0;
   border-radius: 1rem;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
 }
 .admin-access-auth-wrap h1 {
   font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
@@ -320,4 +318,123 @@ body {
 }
 .submit-fc input[type=submit]:hover {
   opacity: 0.9;
+}
+
+.profile-header {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 1rem 2rem 0rem;
+  text-align: center;
+}
+.profile-header h2 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-size: 2.8rem;
+}
+
+.user-img {
+  z-index: 3;
+  text-align: center;
+}
+.user-img i {
+  font-size: 10rem;
+  background-color: #eee;
+  color: #fc6917;
+  padding: 1rem 2rem 2rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  border: 3px solid white;
+}
+
+.profile-body {
+  padding: 0 2rem;
+  border-top: 2px groove #222546;
+  border-bottom: 2px groove #222546;
+  margin: 2.5rem 0;
+}
+
+.other-admins {
+  margin-top: 0.5rem;
+}
+
+.admin-action-options {
+  text-align: center;
+}
+.admin-action-options ul {
+  border-top: 2px groove #222546;
+  border-bottom: 2px groove #222546;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.admin-action-options ul li {
+  list-style: none;
+  margin: 2rem 0;
+}
+.admin-action-options ul li a {
+  text-decoration: none;
+  color: #222546;
+  font-weight: 600;
+}
+.admin-action-options ul li a i {
+  font-size: 4rem;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+.admin-action-options ul li a:hover {
+  color: #fc6917;
+}
+.admin-action-options ul li a:hover i {
+  -webkit-animation-name: swing;
+  animation-name: swing;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
 }

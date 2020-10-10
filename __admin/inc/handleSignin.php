@@ -23,7 +23,7 @@ if (empty($signinUsername) || empty($signinPassword)) {
     if($gottenUser != null) {
     	if (password_verify($signinPassword, $gottenUser->password)) {
     		$_SESSION['is_logged_into_sirimazone'] = true;
-            $_SESSION['logged_in_username'] = $signinUsername;
+            $_SESSION['logged_in_sirimazone_username'] = $signinUsername;
     		$_SESSION['just_signed_in'] = true;
 
     		//redirect to profile page

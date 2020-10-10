@@ -3,6 +3,7 @@ ReWriteEngine On
 
 RewriteRule ^/?$ index.php
 RewriteRule ^__admin/profile?$ __admin/profile.php
+RewriteRule ^__admin/upload-content?$ __admin/upload-content.php
 RewriteRule ^__admin/test?$ __admin/test.php
 RewriteRule ^__admin/logout?$ __admin/logout.php
 RewriteRule ^404?$ 404.php

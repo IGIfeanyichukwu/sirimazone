@@ -11,7 +11,7 @@ require '../classes/Login.php';
  $db = $database->connect();
  $login = new Login($db);
 
-$loggedInUsername = $_SESSION['logged_in_username'];
+$loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
 
 //getting the request uri of the page
 $reqUri = $_SERVER['REQUEST_URI'];
@@ -52,7 +52,7 @@ require '../temp/header.php';
 	//check if the user just signedup
 	if(isset($_SESSION['just_signed_up'])) {
 
-	    	$signupMsg = 'Welcome and Congratulations🎉🎉🎉🎉 Boss '.$_SESSION['logged_in_username'].', You have successfully been registered and signed in as an ADMIN user of Sirimazone. We are happy you joined the wonderful team of individuals that manage Sirimazone contents and we are looking forward to you making Sirimazone better. Thank you.';
+	    	$signupMsg = 'Welcome and Congratulations🎉🎉🎉🎉 Boss '.$_SESSION['logged_in_sirimazone_username'].', You have successfully been registered and signed in as an ADMIN user of Sirimazone. We are happy you joined the wonderful team of individuals that manage Sirimazone contents and we are looking forward to you making Sirimazone better. Thank you.';
 
 	    	echo "<script>
 	    		document.querySelector('.modal-bg').classList.add('show-modal-bg');
@@ -80,7 +80,7 @@ require '../temp/header.php';
 	    } else if(isset($_SESSION['just_signed_in'])) {
 
 	    	//get username
-	    	$_siginUsername = $_SESSION['logged_in_username'];
+	    	$_siginUsername = $_SESSION['logged_in_sirimazone_username'];
 
 	    	//set signin message
 	    	$signinMsg = 'You have been signed in. Welcome back Boss ' . $_siginUsername . '.';
@@ -105,21 +105,63 @@ require '../temp/header.php';
 
 			//make the message show just once
 			unset($_SESSION['just_signed_in']);
-			
+
 	    }
 
 
-$user = $_SESSION['logged_in_username'];
-echo 'Logged in user is '.$user.'<br>';
+// $username = $_SESSION['logged_in_sirimazone_username'];
 
 
 ?>
 
+<div class="profile-header">
+	<!-- <div class="profile-header-bg"></div> -->
+	<div class="user-img"><i class="fas fa-user"></i></div>
+	<h2><?php echo ucfirst($loggedInUsername); ?></h2>
+	<p><small><?php echo '@'.$loggedInUsername; ?></small> | <small>0 posts</small> | <small><a style="color: black;" href="../logout">Logout</a></small></p>
+
+<p class="other-admins">Other Admins:
+	<?php 
+
+	$allAdminStatement = $login->getAllAdminUser();
+
+	while($allAdminUser = $allAdminStatement->fetch(PDO::FETCH_ASSOC)) {
+		extract($allAdminUser);
+		if($username !== $loggedInUsername) {
+		echo ' @'.$username;
+
+	} else if(empty($username)) {
+		echo 'none';
+	}
+
+
+	}
+
+	?>
+</p>
+</div>
+
+<div class="profile-body">
+	
+
+	<div class="admin-action-options">
+		<ul>
+			<li><a href="#"><i class="fas fa-pencil-alt"></i><br><span>Edit Profile</span></a></li>
+			<li><a href="#"><i class="fas fa-plus"></i><br><span>Create Content Post</span></a></li>
+			<li><a href="#"><i class="fas fa-edit"></i><br><span>Manage Content Posts</span></a></li>
+
+			<li><a href="../upload-content"><i class="fas fa-cloud-upload-alt"></i><br><span>Upload Content</span></a></li>
+
+			<li><a href="#"><i class="fas fa-trash"></i><br><span>Delete Content</span></a></li>
+			<li><a href="#"><i class="fas fa-comment-dots"></i><br><span>Manage Post Comments</span></a></li>
+			<li><a href="#"><i class="fas fa-user-plus"></i><br><span>Manage Access IDs</span></a></li>
+		</ul>
+	</div>
+
+</div>
 
 
 
-<h2>This is the profile page.</h2>
-<a href="../logout">Logout</a>
 
 
 

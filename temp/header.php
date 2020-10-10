@@ -8,6 +8,22 @@
 
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; echo '?v='.time() ?>">
 
+ <?php 
+ 		if(isset($usejQuery) && $usejQuery === true) {
+ 	?>
+	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/jquery-3.3.1.js'; ?>"></script>
+ 	<?php
+ 		}
+
+ 		if(isset($useAjaxUpload) && $useAjaxUpload === true) {
+ 	?>
+
+	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/ajaxupload.js'; ?>"></script>
+
+	<?php
+ 		}
+ ?>
+
 	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/mdtoast.min.js'; ?>"></script>
 
 </head>
@@ -45,10 +61,10 @@
 	    
 	    
 	</div>
-<?php if(isset($_SESSION['logged_in_username'])) { ?>
+<?php if(isset($_SESSION['logged_in_sirimazone_username'])) { ?>
 	<div class="login-icon-wrap">
        <div><span><i class="fas fa-user"></i></span></div> 
-       <div><span><?php echo '@'; echo $_SESSION['logged_in_username']; ?></span></div>
+       <div><span><?php echo '@'; echo $_SESSION['logged_in_sirimazone_username']; ?></span></div>
 	</div>
 <?php } ?>
 	
