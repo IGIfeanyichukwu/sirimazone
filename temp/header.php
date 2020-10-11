@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; echo '?v='.time() ?>">
 
+	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/mdtoast.min.js'; ?>"></script>
+	
  <?php 
  		if(isset($usejQuery) && $usejQuery === true) {
  	?>
@@ -24,7 +26,6 @@
  		}
  ?>
 
-	<script src="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'scripts/prod/mdtoast.min.js'; ?>"></script>
 
 </head>
 <body>

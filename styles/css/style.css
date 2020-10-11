@@ -24,6 +24,10 @@ body {
   overflow: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
 ::selection {
   background-color: #ddd;
   color: rgba(34, 37, 70, 0.7);
@@ -437,4 +441,78 @@ body {
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
   }
+}
+.file-upload-progress {
+  height: 1.5rem;
+  background-color: #eee;
+  border-radius: 10rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.file-upload-progress-bar {
+  background-color: #222546;
+  height: 1.5rem;
+  transition: width 0.6s ease;
+  border-radius: 10rem;
+  width: 0;
+}
+
+#file-upload-status {
+  margin-top: 1rem;
+  font-size: 2rem;
+  height: 2.8rem;
+}
+
+.file-upload-div {
+  margin: 4rem 4rem 2rem;
+  text-align: center;
+  border: 2px dashed #222546;
+  padding: 4rem 3rem 3.5rem;
+}
+
+.file-input-fc {
+  background-color: #eee;
+  display: flex;
+  border-radius: 10rem;
+}
+.file-input-fc .file-input-wrap {
+  position: relative;
+  overflow-x: hidden;
+  display: inline-block;
+}
+.file-input-fc .file-input-wrap input[type=file] {
+  position: relative;
+  top: 0;
+  left: -7.2rem;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  color: #fc6917;
+}
+.file-input-fc label {
+  display: inline-block;
+  background: rgba(34, 37, 70, 0.7);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10rem;
+  width: 10rem;
+  white-space: nowrap;
+}
+.file-input-fc label:hover {
+  background-color: #222546;
+}
+
+.file-submit-fc {
+  margin: 4rem 2rem;
+}
+.file-submit-fc button {
+  outline: none;
+  background-color: #222546;
+  padding: 0.75rem 1.5rem;
+  font-size: 2.1rem;
+  border: 0 solid transparent;
+  color: white;
+  border-radius: 1rem;
+}
+.file-submit-fc button:hover {
+  background-color: rgba(34, 37, 70, 0.7);
 }

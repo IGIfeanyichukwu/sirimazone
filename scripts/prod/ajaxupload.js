@@ -1,55 +1,92 @@
 console.log('This is from the ajaxupload script');
 
 
-/*$(document).ready(function(){
-	$('#file-upload-form').on('submit', function(e){
+$(document).ready(function () {
+	$("#file-upload-form").on('submit', function(e){
 		e.preventDefault();
 		$.ajax({
 			xhr: function() {
 				var xhr = new window.XMLHttpRequest();
-				xhr.upload.addEventListener('progress', function(evt) {
+				xhr.upload.addEventListener("progress", function(evt) {
 					if(evt.lengthComputable) {
-						var percentComplete = ((evt.loaded /evt.total) * 100);
-						$('.upload-progress-bar').width(percentComplete + '%');
+						var percentComplete = ((evt.loaded / evt.total) * 100);
+						$(".file-upload-progress-bar").width(percentComplete + '%');
 					}
 				}, false);
 				return xhr;
 			},
 			type: 'POST',
-			url: 'upload-content.php',
+			url: '../__admin/fileUploadServer.php',
 			data: new FormData(this),
-			contentType: false;
+			contentType: false,
 			cache: false,
 			processData: false,
 			beforeSend: function() {
-				$('.upload-progress-bar').width('0%');
-				$('#uploadStatus').html('uplooading');
+				$('.file-upload-progress-bar').width('0%');
+				$('#file-upload-status').html('<p>uploading to server...</p>');
 			},
 			error: function() {
-				$('#upload').html('<p>File upload fail, please try again.</p>')
+				$('#file-upload-status').html('<p>uploaded failed.</p>');
+				mdtoast('File upload failed, kindly try again', {
+						duration: 3000,
+			  			type: 'error'
+					});
+
 			},
-			success: function() {
-				if(resp == 'ok') {
+			success: function(response) {
+				console.log('It was successful');
+				console.log('Response value is ', response);
+				if (response == 'ok') {
 					$('#file-upload-form')[0].reset();
-					$('#uploadStatus').html('<p>File has been uploaded successfully.</p>')
-				}else if(resp == 'err') {
-					$('#uploadStatus').html('<p>please select a valid file to upload</p>')
+					$('#file-upload-status').html('<p>uploaded.</p>');
+	    			document.querySelector('.modal-bg').classList.add('show-modal-bg');
+					mdtoast('Hurray, The file has been successfully uploaded.', {
+					duration: 4000,
+		  			type: 'success',
+		  			// modal: true,
+		  			interaction: true,
+		  			interactionTimeout: 5000,
+		  			actionText: 'OK', 
+	  				action: function(){
+	    			document.querySelector('.modal-bg').classList.remove('show-modal-bg');
+	    			this.hide();
+	  			}
+
+				});
+				}else if (response == 'err') {
+					$('#file-upload-status').html('');
+					$(".file-upload-progress-bar").width('0');
+					mdtoast('Please select a valid file to upload', {
+						duration: 3000,
+			  			type: 'error'
+					});
+				} else if (response == 'max_size_err') {
+					$('#file-upload-status').html('');
+					$(".file-upload-progress-bar").width('0');
+					mdtoast('File size should not exceed 510MB', {
+						duration: 3000,
+			  			type: 'error'
+					});
 				}
+
 			}
-			});
 		});
+	});
 
 		//file type validation
 		$('#file-upload-input').change(function(){
-			var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'application/vnd.openxmlformats-officedocument.wordprocessingml', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+			var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'audio/mpeg', 'video/3gpp', 'video/mp4', 'video/x-matroska' ];
 
 			var file = this.files[0];
 			var fileType = file.type;
 			if(!allowedTypes.includes(fileType)) {
-				alert('Please select a valid file(PDF/DOC/DOCX/JPEG/JPG/PNG/GIF).');
+				mdtoast('Please select a valid file(JPEG/JPG/PNG/GIF/MP3/3GP/MP4/MKV).', {
+						duration: 4000,
+			  			type: 'warning'
+					});
 				$('file-upload-input').val('');
 				return false;
 			}
 			})
 	});
-*/
+
