@@ -9,6 +9,9 @@ require '../classes/Content.php';
  $db = $database->connect();
  $content = new Content($db);
 
+//check if user is logged in
+if(isset($_SESSION['is_logged_into_sirimazone'])) {
+
  $loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
 
 //handleUploads
@@ -85,3 +88,8 @@ if(!empty($_FILES['file'])) {
 }
 
 echo $uploadRes;
+
+} else {
+	//if user is not logged it
+	echo 'UNAUTHORIZED ACCESS :(';
+}
