@@ -6,7 +6,18 @@ $light-color: #f4f4f4;
 $primary-color: rgba(34, 37, 70, 0.7);
 
 $primary-color2: rgba(34, 37, 70);
+
 $sec-color: rgba(252, 105, 23);
+
+@function secColor($opacityValue) {
+	$result: rgba(252, 105, 23, $opacityValue);
+	@return $result;
+}
+
+@function primaryColor($opacityValue) {
+	$result: rgba(252, 105, 23, $opacityValue);
+	@return $result;	
+}
 
 $shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
 

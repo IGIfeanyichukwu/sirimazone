@@ -8,6 +8,8 @@ $stepToRoot = '../';
 $usejQuery = true;
 $useAjaxUpload = true;
 
+//check if user is logged in
+if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 require '../temp/header.php';
 
@@ -47,5 +49,13 @@ require '../temp/header.php';
 <?php 
 
 require '../temp/footer.php';
+
+} else {  //if the user is not logged in
+    
+    //go back to authetication
+    header('Location: ./');
+
+
+}
 
 ?>

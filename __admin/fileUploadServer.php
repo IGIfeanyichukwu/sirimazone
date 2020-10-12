@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+
+require '../classes/Dbase.php';
+require '../classes/Content.php';
+
+ $database = new Dbase();
+ $db = $database->connect();
+ $content = new Content($db);
+
+ $loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
 
 //handleUploads
 $uploadRes = 'err';
@@ -22,6 +32,8 @@ if(!empty($_FILES['file'])) {
 
 	$fileSize = $_FILES['file']['size'];
 
+	$convFileSize = $content->convertByteInString($fileSize);
+
 	$targetFilePath = $targetDir.$fileName;
 
 	//get the file's extesion
@@ -39,12 +51,19 @@ if(!empty($_FILES['file'])) {
 	//rename file but set length to 150 if greater than 150
 	if(strlen($fileRealName) > 150) {
 
-	$newFileName = $targetDir.substr($fileRealName, 0, 150).$randVal.'.'.$fileExt;
+	//set filename to upload to sql
+	$justFileName = substr($fileRealName, 0, 150).$randVal.'.'.$fileExt;
+
+	//set filename to upload to directory
+	$newFileName = $targetDir.$justFileName;
 
 	} else {
 
-	//rename file
-	$newFileName = $targetDir.$fileRealName.$randVal.'.'.$fileExt;
+	//set filename to upload to sql
+	$justFileName = $fileRealName.$randVal.'.'.$fileExt;
+
+	//set filename to upload to directory
+	$newFileName = $targetDir.$justFileName;
 
 	}
 
@@ -57,6 +76,7 @@ if(!empty($_FILES['file'])) {
 
 			//upload file to the server
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $newFileName)) {
+				$content->uploadToSQL($justFileName, $fileExt, $convFileSize, $loggedInUsername);
 				$uploadRes = 'ok';
 			}
 

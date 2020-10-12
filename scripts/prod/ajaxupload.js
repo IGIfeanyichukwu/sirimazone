@@ -43,12 +43,14 @@ $(document).ready(function () {
 					mdtoast('Hurray, The file has been successfully uploaded.', {
 					duration: 4000,
 		  			type: 'success',
-		  			// modal: true,
+		  			modal: true,
 		  			interaction: true,
 		  			interactionTimeout: 5000,
 		  			actionText: 'OK', 
 	  				action: function(){
 	    			document.querySelector('.modal-bg').classList.remove('show-modal-bg');
+					$(".file-upload-progress-bar").width('0');
+					$('#file-upload-status').html('');
 	    			this.hide();
 	  			}
 
