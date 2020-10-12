@@ -88,3 +88,38 @@
 
 	}
 }
+
+.page-title {
+	span {
+		font-size: 1.8rem;
+		margin-left: -1rem;
+
+		a {
+			color: $primary-color2;
+
+			&:hover {
+				color: $sec-color;
+			}
+		}
+	}
+
+	& + p {
+		margin-top: 0.6rem;
+	}
+}
+
+.upload-guidelines {
+	h4 {
+		font-size: 1.8rem;
+	}
+
+
+	ol {
+		margin-left: 3rem;
+		// line-height: 2rem;
+
+		li {
+			margin: 0.3rem 0;
+		}
+	}
+}

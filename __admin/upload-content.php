@@ -11,12 +11,16 @@ $useAjaxUpload = true;
 //check if user is logged in
 if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
+	$loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
+
 require '../temp/header.php';
 
 ?>
 
-<h2>Upload Content</h2>
-<p>Select the file you want to upload and click the upload button to upload.</p>
+<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Upload Content</h2>
+<p>To upload a file to Sirimazone's server simply select the file and click the upload button.</p>
+
+
 
 <div class="file-upload-div">
 
@@ -43,6 +47,17 @@ require '../temp/header.php';
 	<!-- Display upload status -->
 	<div id="file-upload-status"></div>
 	
+</div>
+
+<div class="upload-guidelines">
+	<h4>Guidelines for uploading files</h4>
+	<ol>
+		<li>Only image(jpg, jpeg, png, gif), music(mp3) and video(3gp, mp4, mkv) files can be uploaded.</li>
+		<li>Files can only be uploaded one at a time i.e multiple uploaded is not allowed.</li>
+		<li>Uploaded maximum file size is 510mb. Files with size greater that 510mb will not be uploaded.</li>
+		<li>If this page gets stuck simply refresh it and try again.</li>
+	</ol>
+
 </div>
 
 

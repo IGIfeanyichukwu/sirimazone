@@ -516,3 +516,27 @@ h1, h2, h3, h4, h5, h6 {
 .file-submit-fc button:hover {
   background-color: rgba(34, 37, 70, 0.7);
 }
+
+.page-title span {
+  font-size: 1.8rem;
+  margin-left: -1rem;
+}
+.page-title span a {
+  color: #222546;
+}
+.page-title span a:hover {
+  color: #fc6917;
+}
+.page-title + p {
+  margin-top: 0.6rem;
+}
+
+.upload-guidelines h4 {
+  font-size: 1.8rem;
+}
+.upload-guidelines ol {
+  margin-left: 3rem;
+}
+.upload-guidelines ol li {
+  margin: 0.3rem 0;
+}
