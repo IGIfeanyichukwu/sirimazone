@@ -14,7 +14,7 @@ openSignup.onclick = function () {
 	signinForm.classList.add('display-none');
 }
 } else {
-	console.log('opensignup and signupForm are null');
+	// console.log('opensignup and signupForm are null');
 }
 
 
@@ -26,7 +26,7 @@ openSignin.onclick = function () {
 }
 
 } else {
-	console.log('openSignin and signinForm are both null');
+	// console.log('openSignin and signinForm are both null');
 }
 
 }

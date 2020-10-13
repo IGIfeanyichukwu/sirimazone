@@ -3,6 +3,14 @@
   display: none;
 }
 
+.alert-role-box {
+  background: #fed7d7;
+  border: 1px solid #fc8181;
+  color: #c53030;
+  padding: 0.5rem 0.7rem;
+  margin: 0.6rem 0.7rem;
+}
+
 @font-face {
   font-family: nunito;
   src: url("../fonts/Nunito-Regular.ttf");

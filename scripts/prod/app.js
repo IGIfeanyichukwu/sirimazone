@@ -137,8 +137,7 @@ var adminAccess = function adminAccess() {
       signupForm.classList.remove('display-none');
       signinForm.classList.add('display-none');
     };
-  } else {
-    console.log('opensignup and signupForm are null');
+  } else {// console.log('opensignup and signupForm are null');
   }
 
   if (openSignin !== null && signinForm !== null) {
@@ -146,14 +145,13 @@ var adminAccess = function adminAccess() {
       signinForm.classList.remove('display-none');
       signupForm.classList.add('display-none');
     };
-  } else {
-    console.log('openSignin and signinForm are both null');
+  } else {// console.log('openSignin and signinForm are both null');
   }
 };
 
 var _default = adminAccess;
 exports.default = _default;
-},{}],"fileInput.js":[function(require,module,exports) {
+},{}],"fileDeletion.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -161,40 +159,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var fileInput = function fileInput() {
-  /*const inputs = document.querySelectorAll('.file-input-fc');
-  
-  if (inputs !== null) {
-  	Array.prototype.forEach.call(inputs, function( input ) {
-  		const label = input.nextElementSibling, labelVal = label.innerHTML;
-  
-  		input.addEventListener('change', function(e) {
-  			let fileName = '';
-  			fileName = e.target.value.split('\\').pop();
-  
-  			if (fileName) {
-  				label.innerHTML = fileName;
-  			} else {
-  				label.innerHTML = labelVal;
-  			}
-  		});
-  	});
-  }
-  */
+var fileDeletion = function fileDeletion() {
+  var deleteFileBtn = document.getElementById('delete-file-btn');
+  var fileDeleteForm = document.getElementById('file-delete-form');
 };
 
-var _default = fileInput;
+var _default = fileDeletion;
 exports.default = _default;
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _adminAccess = _interopRequireDefault(require("./adminAccess"));
 
-var _fileInput = _interopRequireDefault(require("./fileInput"));
+var _fileDeletion = _interopRequireDefault(require("./fileDeletion"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("SIRIMAZONE");
 (0, _adminAccess.default)();
-(0, _fileInput.default)();
-},{"./adminAccess":"adminAccess.js","./fileInput":"fileInput.js"}]},{},["script.js"], null)
+(0, _fileDeletion.default)();
+},{"./adminAccess":"adminAccess.js","./fileDeletion":"fileDeletion.js"}]},{},["script.js"], null)

@@ -1,7 +1,7 @@
 import adminAccess from './adminAccess';
-import fileInput from './fileInput';
+import fileDeletion from './fileDeletion';
 
 console.log("SIRIMAZONE");
 
 adminAccess();
-fileInput();
+fileDeletion();

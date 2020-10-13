@@ -152,7 +152,7 @@ require '../temp/header.php';
 
 			<li><a href="../upload-content"><i class="fas fa-cloud-upload-alt"></i><br><span>Upload Content</span></a></li>
 
-			<li><a href="#"><i class="fas fa-trash"></i><br><span>Delete Content</span></a></li>
+			<li><a href="../delete-content"><i class="fas fa-trash"></i><br><span>Delete Content</span></a></li>
 			<li><a href="#"><i class="fas fa-comment-dots"></i><br><span>Manage Post Comments</span></a></li>
 			<li><a href="#"><i class="fas fa-user-plus"></i><br><span>Manage Access IDs</span></a></li>
 		</ul>

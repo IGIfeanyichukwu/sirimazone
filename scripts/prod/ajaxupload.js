@@ -45,7 +45,6 @@ $(document).ready(function () {
 		  			type: 'success',
 		  			modal: true,
 		  			interaction: true,
-		  			interactionTimeout: 5000,
 		  			actionText: 'OK', 
 	  				action: function(){
 	    			document.querySelector('.modal-bg').classList.remove('show-modal-bg');

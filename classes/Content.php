@@ -55,6 +55,57 @@ class Content { //content class
 	}
 
 
+	public function getAllUploadedFiles() {
+
+		$query = 'SELECT * FROM '.$this->uploadsTable;
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+        //Execute query
+        $stmt->execute();
+
+        return $stmt;
+
+	}
+
+	public function getUploadsBy($username = null) {
+
+		$query = 'SELECT * FROM '.$this->uploadsTable.' WHERE '.$this->uploadsTable.'.uploaded_by = :uploader';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':uploader', $username);
+
+		//execute query
+		$stmt->execute();
+
+		return $stmt;
+
+	}
+
+	public function deleteFileFromSQL($fileName) {
+
+		$query = 'DELETE FROM '.$this->uploadsTable.' WHERE file_name = :file_name';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':file_name', $fileName);
+
+		//execute query
+		if($stmt->execute()) {
+			return true;
+		}
+
+		return false;
+
+	}
+
+
 
 
 }
