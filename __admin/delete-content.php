@@ -161,7 +161,7 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 	    		$uploader = $uploadedFile['uploaded_by'];
 	    	?>
 
-		    	<option value="<?php echo $uploadedFile['file_name']; ?>"><?php echo $fileName; echo ' ('.$fileSize.')'; echo ' - Upload By '.$uploader; ?></option>
+		    	<option value="<?php echo $uploadedFile['file_name']; ?>"><?php echo $fileName; echo ' ('.$fileSize.')'; echo ' - Uploaded By '.$uploader; ?></option>
 
 	    	<?php
 				 

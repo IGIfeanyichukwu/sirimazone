@@ -162,6 +162,15 @@ exports.default = void 0;
 var fileDeletion = function fileDeletion() {
   var deleteFileBtn = document.getElementById('delete-file-btn');
   var fileDeleteForm = document.getElementById('file-delete-form');
+
+  if (fileDeleteForm !== null) {
+    /*fileDeleteForm.addEventListener('submit', function (e) {
+    	
+    
+    
+    
+    });*/
+  }
 };
 
 var _default = fileDeletion;
