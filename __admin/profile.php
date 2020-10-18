@@ -6,10 +6,12 @@ $stepToRoot = '../../';
 
 require '../classes/Dbase.php';
 require '../classes/Login.php';
+require '../classes/Content.php';
 
  $database = new Dbase();
  $db = $database->connect();
  $login = new Login($db);
+ $content = new Content($db);
 
 $loggedInUsername = $_SESSION['logged_in_sirimazone_username'];
 
@@ -27,6 +29,8 @@ $qsPos = strpos($lstUri, $querysign);
 
 //check if user is logged in
 if(isset($_SESSION['is_logged_into_sirimazone'])) {
+
+	$pageTitle = ucwords($loggedInUsername) . '\'s Admin Profile - Sirimazone';
 
 //require header template
 require '../temp/header.php';
@@ -118,7 +122,9 @@ require '../temp/header.php';
 	<!-- <div class="profile-header-bg"></div> -->
 	<div class="user-img"><i class="fas fa-user"></i></div>
 	<h2><?php echo ucfirst($loggedInUsername); ?></h2>
-	<p><small><?php echo '@'.$loggedInUsername; ?></small> | <small>0 posts</small> | <small><a style="color: black;" href="../logout">Logout</a></small></p>
+	<p><small><?php echo '@'.$loggedInUsername; ?></small> | <small><?php echo count( $content->getPublishedContentPostBy($loggedInUsername) ); ?> published posts</small> | <small><a style="color: black;" href="../logout">Logout</a></small></p>
+
+	
 
 <p class="other-admins">Other Admins:
 	<?php 
@@ -146,15 +152,15 @@ require '../temp/header.php';
 
 	<div class="admin-action-options">
 		<ul>
-			<li><a href="#"><i class="fas fa-pencil-alt"></i><br><span>Edit Profile</span></a></li>
-			<li><a href="#"><i class="fas fa-plus"></i><br><span>Create Content Post</span></a></li>
+			<!-- <li><a href="#"><i class="fas fa-pencil-alt"></i><br><span>Edit Profile</span></a></li> -->
+			<li><a href="../create-content-post"><i class="fas fa-plus"></i><br><span>Create Content Post</span></a></li>
 			<li><a href="#"><i class="fas fa-edit"></i><br><span>Manage Content Posts</span></a></li>
 
 			<li><a href="../upload-content"><i class="fas fa-cloud-upload-alt"></i><br><span>Upload Content</span></a></li>
 
 			<li><a href="../delete-content"><i class="fas fa-trash"></i><br><span>Delete Content</span></a></li>
 			<li><a href="#"><i class="fas fa-comment-dots"></i><br><span>Manage Post Comments</span></a></li>
-			<li><a href="#"><i class="fas fa-user-plus"></i><br><span>Manage Access IDs</span></a></li>
+			<li><a href="../manage-access-id"><i class="fas fa-user-plus"></i><br><span>Manage Access IDs</span></a></li>
 		</ul>
 	</div>
 
@@ -177,6 +183,7 @@ require '../temp/footer.php';
 
 
 } else {  //if the user is not logged in
+
     
     //go back to authetication
     header('Location: ./');

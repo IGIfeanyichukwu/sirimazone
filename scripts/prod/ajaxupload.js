@@ -34,8 +34,8 @@ $(document).ready(function () {
 
 			},
 			success: function(response) {
-				console.log('It was successful');
-				console.log('Response value is ', response);
+				// console.log('It was successful');
+				// console.log('Response value is ', response);
 				if (response == 'ok') {
 					$('#file-upload-form')[0].reset();
 					$('#file-upload-status').html('<p>uploaded.</p>');

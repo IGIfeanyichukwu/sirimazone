@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sirimazone Site</title>
+	<title><?php echo isset($pageTitle) ? $pageTitle : null; ?></title>
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/mdtoast.css'; ?>">
 
     <link rel="stylesheet" href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'styles/css/style.css'; echo '?v='.time() ?>">
@@ -40,24 +40,56 @@
 	
 	<nav class="nav">
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-comment-alt"></i> Feedback</a></li>
-            <li><a href="#"><i class="fas fa-fire"></i><span></span>Hollywood</a></li>
-            <li><a href="#"><i class="fas fa-fire"></i><span></span>Nollywood</a></li>
-            <li><a href="#"><i class="fas fa-fire"></i><span></span>Bollywood</a></li>
-            <li><a href="#"><i class="fas fa-fire"></i><span></span>Others</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo ''; ?>" class="<?php echo isset($activateHome) ? 'activate-home' : null; ?>"><i class="fas fa-home"></i> Home</a></li>
+            <!-- <li><a href="#" class="<?php //echo isset($activateFeed) ? 'activate-feed' : null; ?>"><i class="fas fa-comment-alt"></i> Feedback</a></li> -->
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/hollywood'; ?>" class="<?php echo isset($activateHolly) ? 'activate-holly' : null; ?>"><i class="fas fa-fire"></i><span></span>Hollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/nollywood'; ?>" class="<?php echo isset($activateNolly) ? 'activate-nolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Nollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/bollywood'; ?>" class="<?php echo isset($activateBolly) ? 'activate-bolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Bollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/others'; ?>" class="<?php echo isset($activateOthers) ? 'activate-others' : null; ?>"><i class="fas fa-fire"></i><span></span>Others</a></li>
         </ul>
 	</nav>
 	
 	<div class="random-movie-container">
 	    <h3>Random Movies</h3>
 	    <div class="random-movie-wrap">
+    	<?php 
+    	if (isset($content)) { 
+
+    		$pubPostArrStatement = $content->getPublishedContentPost();
+
+    		$pubPostArr = $pubPostArrStatement->fetchAll();
+
+    		if ($pubPostArr != null) {
+
+    		//get max value of random number
+    		$randMax = count($pubPostArr) - 1;
+
+    		// echo $randMax;
+
+    		//set random values
+    		$rand1 = rand(0, $randMax);
+    		$rand2 = rand(0, $randMax);
+    		$rand3 = rand(0, $randMax);
+    		$rand4 = rand(0, $randMax);
+
+
+	    ?>
 	        <ul>
-	            <li><a href="#">Movie One</a></li>
-	            <li><a href="#">Movie Two</a></li>
-	            <li><a href="#">Movie Three</a></li>
-	            <li><a href="#">Movie Four</a></li>
+	            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'contents/' . $pubPostArr[$rand1]['content_slug']; ?>"><?php echo $pubPostArr[$rand1]['content_title']; ?></a></li>
+	            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'contents/' . $pubPostArr[$rand2]['content_slug']; ?>"><?php echo $pubPostArr[$rand2]['content_title']; ?></a></li>
+	            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'contents/' . $pubPostArr[$rand3]['content_slug']; ?>"><?php echo $pubPostArr[$rand3]['content_title']; ?></a></li>
+	            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'contents/' . $pubPostArr[$rand4]['content_slug']; ?>"><?php echo $pubPostArr[$rand4]['content_title']; ?></a></li>
 	        </ul>
+
+        <?php 
+		    } else {
+
+		    	echo '<p class="no-content"><small>No content yet.</small></p>';
+		    }
+
+	    } else { echo 'content var not set'; } 
+
+        ?>
 	    </div>
 	    
 	    

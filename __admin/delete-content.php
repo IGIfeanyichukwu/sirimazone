@@ -2,6 +2,7 @@
 session_start();
 
 $stepToRoot = '../';
+$pageTitle = 'Delete Content - Sirimazone';
 
 require '../classes/Dbase.php';
 require '../classes/Content.php';

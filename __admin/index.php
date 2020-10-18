@@ -2,13 +2,16 @@
 session_start();
 
 $stepToRoot = '../';
+$pageTitle = 'Sign in - Sirimazone';
 
 require '../classes/Dbase.php';
 require '../classes/Login.php';
+require '../classes/Content.php';
 
  $database = new Dbase();
  $db = $database->connect();
  $login = new Login($db);
+ $content = new Content($db);
 
 require_once '../temp/header.php';
 

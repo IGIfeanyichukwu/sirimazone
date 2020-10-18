@@ -84,8 +84,21 @@
                 text-decoration: none;
                 color: black;
                 font-weight: 600;
+
+                &.activate-feed, &.activate-home, &.activate-holly, &.activate-nolly, &.activate-bolly, &.activate-others {
+
+                    color: $sec-color;
+                    
+                    i {
+                    visibility: visible;
+                    color: $sec-color;
+                    }
+
+                }
                 
                 &:hover {
+
+                    
                     
                     color: $sec-color;
                     
@@ -93,6 +106,7 @@
                     visibility: visible;
                     color: $sec-color;
                     }
+
                 }
                 
                 i {
@@ -127,10 +141,16 @@
         margin-top: 1rem;
         border-radius: 0.75rem;
         box-shadow: $shadow-xl;
+
+        .no-content {
+            text-align: center;
+            padding: 1rem 0;
+        }
         
         ul {
             text-align: center;
             padding: 0.1rem 0;
+            font-size: 1.4rem;
             
             li {
                 list-style: none;

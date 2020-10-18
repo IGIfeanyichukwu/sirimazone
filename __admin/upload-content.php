@@ -3,6 +3,7 @@ session_start();
 
 
 $stepToRoot = '../';
+$pageTitle = 'Upload Content - Sirimazone';
 
 //add jquery and upload js scripts
 $usejQuery = true;

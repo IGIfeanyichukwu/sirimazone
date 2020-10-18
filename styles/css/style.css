@@ -138,6 +138,13 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   font-weight: 600;
 }
+.nav ul li a.activate-feed, .nav ul li a.activate-home, .nav ul li a.activate-holly, .nav ul li a.activate-nolly, .nav ul li a.activate-bolly, .nav ul li a.activate-others {
+  color: #fc6917;
+}
+.nav ul li a.activate-feed i, .nav ul li a.activate-home i, .nav ul li a.activate-holly i, .nav ul li a.activate-nolly i, .nav ul li a.activate-bolly i, .nav ul li a.activate-others i {
+  visibility: visible;
+  color: #fc6917;
+}
 .nav ul li a:hover {
   color: #fc6917;
 }
@@ -171,9 +178,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.75rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+.random-movie-container div .no-content {
+  text-align: center;
+  padding: 1rem 0;
+}
 .random-movie-container div ul {
   text-align: center;
   padding: 0.1rem 0;
+  font-size: 1.4rem;
 }
 .random-movie-container div ul li {
   list-style: none;

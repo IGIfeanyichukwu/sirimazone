@@ -157,6 +157,120 @@ class Login { //login class (contains method that enables login)
 
 	}
 
+
+	 //create access id
+	public function createAccessID($accessName, $accessKey, $creator) {
+
+		$hashedKey = password_hash($accessKey, PASSWORD_BCRYPT);
+
+		$query = "INSERT INTO ". $this->accessIdTable ."(`access_name`, `access_key`, `access_id_creator`) VALUES (:accessName, :accessKey, :creator)";
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':accessName', $accessName);
+		$stmt->bindValue(':accessKey', $hashedKey);
+		$stmt->bindValue(':creator', $creator);
+
+		// Execute query
+		if($stmt->execute()) {
+			return true;
+		}
+
+		// Print error if something goes wrong
+		printf("Error: %s. \n", $stmt->error);
+
+		return false;
+
+	}
+
+
+	public function checkForDuplicateAccessName($accessName) {
+
+		$query = 'SELECT * FROM '.$this->accessIdTable. ' WHERE access_name = :accessName';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':accessName', $accessName);
+
+		//execute
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+
+		return $result;
+
+	}
+
+	public function getAvailableAccessIdNum($case) {
+
+		switch ($case) {
+			case 1:
+			//get the number of all the access id
+				$query = 'SELECT * FROM '.$this->accessIdTable;
+				
+				//prepare
+				$stmt = $this->conn->prepare($query);
+
+				//execute
+				$stmt->execute();
+
+				$result = $stmt->fetchAll();
+
+				if($result != null) {
+					return count($result);
+				} else {
+					return 0;
+				}
+
+				break;
+
+			case 2:
+			//get number of unused access id
+				$query = 'SELECT * FROM '.$this->accessIdTable. '  WHERE is_used = "0"';
+				
+				//prepare
+				$stmt = $this->conn->prepare($query);
+
+				//execute
+				$stmt->execute();
+
+				$result = $stmt->fetchAll();
+
+				if($result != null) {
+					return count($result);
+				} else {
+					return 0;
+				}
+				
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+	}
+
+	public function deleteAllAccessIDs() {
+
+		$query = 'DELETE FROM '.$this->accessIdTable;
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//execute
+		if($stmt->execute()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public static function logout() {
 		session_start();
 		session_destroy();
