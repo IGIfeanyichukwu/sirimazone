@@ -7,6 +7,7 @@ RewriteRule ^__admin/upload-content?$ __admin/upload-content.php
 RewriteRule ^__admin/delete-content?$ __admin/delete-content.php
 RewriteRule ^__admin/create-content-post?$ __admin/create-content-post.php
 RewriteRule ^__admin/manage-access-id?$ __admin/manage-access-id.php
+RewriteRule ^__admin/manage-content-post?$ __admin/manage-content-post.php
 RewriteRule ^__admin/test?$ __admin/test.php
 RewriteRule ^__admin/logout?$ __admin/logout.php
 RewriteRule ^404?$ 404.php
@@ -16,8 +17,11 @@ RewriteRule ^404?$ 404.php
 RewriteRule ^__admin/profile/([0-9a-zA-Z|_]+) __admin/profile.php?adminuser=$1
 
 RewriteRule ^contents/([0-9a-zA-Z|-]+) contents.php?slug=$1
-RewriteRule ^category/([0-9a-zA-Z|-]+) category.php?catt=$1
+
 RewriteRule ^page/([0-9]+) page.php?page=$1
+
+
+RewriteRule ^category/([0-9a-zA-Z|-]+)/([0-9]+) category.php?catt=$1&page=$2
 
 
 ErrorDocument 404 http://localhost/sirimazone/404 

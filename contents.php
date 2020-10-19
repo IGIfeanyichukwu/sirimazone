@@ -40,6 +40,9 @@ $slugArr = $content->getAllPublishedPostsSlug();
 
 //set a container for all real slugs
 $realSlugArr = array();
+/*
+echo 'last uri is '.$lstUri;
+echo '<br> and gotten slug is '. $gottenSlug;*/
 
 
 foreach ($slugArr as $slug) {
@@ -52,7 +55,7 @@ $conInfo = $content->getPostBySlug($gottenSlug);
 $uploadDir = '../uploadz/';
 
 
-if (isset($_GET['slug']) && $qsPos == true) {
+if (isset($_GET['slug']) && $qsPos == true || $lstUri != $gottenSlug) {
 		//redirect to 404
 	header('Location: ../404');
 
@@ -83,7 +86,7 @@ if(isset($_POST['comment-post-btn'])) {
 <p>
 	<small><i class="fas fa-user"></i> <span><?php echo ucwords($conInfo['content_author']); ?></span></small> &nbsp; 
 	<small><i class="fas fa-calendar-alt"></i> <span><?php echo date('F j, Y', $timeStamp); ?></span></small> &nbsp;
-	<small><a href="<?php echo '../category/'. $conInfo['content_category']; ?>"><i class="fas fa-folder-open"></i> <span><?php echo $conInfo['content_category']; ?></span></a></small> &nbsp;
+	<small><a href="<?php echo '../category/'. strtolower($conInfo['content_category']); ?>"><i class="fas fa-folder-open"></i> <span><?php echo $conInfo['content_category']; ?></span></a></small> &nbsp;
 	<small><a href="#"><i class="fas fa-comments"></i> <span><?php echo count($commentArr). ' Comments '; ?></span></a></small>
 
 </p>

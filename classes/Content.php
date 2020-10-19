@@ -143,7 +143,7 @@ class Content { //content class
 
 		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :numberOfResult';
 
-		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT ' . $startLimit . ' , '. $numberOfResult;
+		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1"  ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $numberOfResult;
 
 		//prepare statement
 		$stmt = $this->conn->prepare($query);
@@ -161,6 +161,33 @@ class Content { //content class
 		return $result;
 
 	}
+
+
+	public function getPublishedCatPostWithLimit($category, $startLimit, $numberOfResult) {
+
+		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :numberOfResult';
+
+		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" AND content_category = :category ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $numberOfResult;
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':category', $category);
+		// $stmt->bindValue(':numberOfResult', $numberOfResult);
+
+		//execute query
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
+
+	}
+
+
+
 
 	public function getPublishedContentPostBy($username) {
 
@@ -185,7 +212,7 @@ class Content { //content class
 
 	public function getPublishedPostByCat($category) {
 
-		$query = 'SELECT * FROM '. $this->contentsTable . ' WHERE content_category = :category';
+		$query = 'SELECT * FROM '. $this->contentsTable . ' WHERE is_published = "1" AND content_category = :category';
 
 		//prepare statement
 		$stmt = $this->conn->prepare($query);

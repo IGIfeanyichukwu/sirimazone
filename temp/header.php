@@ -42,10 +42,10 @@
         <ul>
             <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo ''; ?>" class="<?php echo isset($activateHome) ? 'activate-home' : null; ?>"><i class="fas fa-home"></i> Home</a></li>
             <!-- <li><a href="#" class="<?php //echo isset($activateFeed) ? 'activate-feed' : null; ?>"><i class="fas fa-comment-alt"></i> Feedback</a></li> -->
-            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/hollywood'; ?>" class="<?php echo isset($activateHolly) ? 'activate-holly' : null; ?>"><i class="fas fa-fire"></i><span></span>Hollywood</a></li>
-            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/nollywood'; ?>" class="<?php echo isset($activateNolly) ? 'activate-nolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Nollywood</a></li>
-            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/bollywood'; ?>" class="<?php echo isset($activateBolly) ? 'activate-bolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Bollywood</a></li>
-            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/others'; ?>" class="<?php echo isset($activateOthers) ? 'activate-others' : null; ?>"><i class="fas fa-fire"></i><span></span>Others</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/hollywood/1'; ?>" class="<?php echo isset($activateHolly) ? 'activate-holly' : null; ?>"><i class="fas fa-fire"></i><span></span>Hollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/nollywood/1'; ?>" class="<?php echo isset($activateNolly) ? 'activate-nolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Nollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/bollywood/1'; ?>" class="<?php echo isset($activateBolly) ? 'activate-bolly' : null; ?>"><i class="fas fa-fire"></i><span></span>Bollywood</a></li>
+            <li><a href="<?php echo isset($stepToRoot) ? $stepToRoot : null; echo 'category/others/1'; ?>" class="<?php echo isset($activateOthers) ? 'activate-others' : null; ?>"><i class="fas fa-fire"></i><span></span>Others</a></li>
         </ul>
 	</nav>
 	
