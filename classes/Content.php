@@ -120,7 +120,38 @@ class Content { //content class
 
 	public function getAllContentPost() {
 
+		$query = 'SELECT * FROM '.$this->contentsTable;
 
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//execute query
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
+
+	}
+
+	public function getAllContentPostByUser($username) {
+		
+		$query = 'SELECT * FROM '.$this->contentsTable . ' WHERE content_author = :username';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':username', $username);
+
+		//execute query
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
 
 	}
 
@@ -333,6 +364,26 @@ class Content { //content class
 
 	}
 
+	public function deleteContentPostBySlug($postSlug) {
+
+		$query = 'DELETE FROM '. $this->contentsTable .' WHERE content_slug = :post_slug';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':post_slug', $postSlug);
+
+		//execute statement
+		if($stmt->execute()) {
+			return true;
+		}
+
+
+		return false;
+		
+	}
+
 
 	public function deleteFileFromSQL($fileName) {
 
@@ -487,6 +538,69 @@ class Content { //content class
 	}
 
 
+/*
+UPDATE `sirimazone_contents` SET `content_cover_image_alt` = 'The Island movie\'s cover image', `content_overview` = 'the movie about an island that got wrecked and all', `content_casts` = 'zombie, chiboy, prisci, glory, osato, henry, all of the above' WHERE `sirimazone_contents`.`id` = 3; 
+
+*/
+
+	public function updateContentPostInDB(
+		$id,
+		$contentTitle,
+		$contentSlug, 
+		$contentCoverImage,
+		$contentCoverImageAlt,
+		$contentCategory,
+		$contentMainFile,
+		$contentMainFileExtServer,
+		$contentOverview,
+		$contentCasts,
+		$isPublished,
+		$isPinned,
+		$updatedAt 
+		) {
+
+		$query = 'UPDATE '.$this->contentsTable.' SET
+				`content_title` = :content_title,
+				`content_slug` = :content_slug,
+				`content_cover_image` = :content_cover_image,
+				`content_cover_image_alt` = :content_cover_image_alt,
+				`content_category` = :content_category,
+				`content_main_file` = :content_main_file,
+				`content_main_file_ext_server` = :content_main_file_ext_server,
+				`content_overview` = :content_overview,
+				`content_casts` = :content_casts,
+				`is_published` = :is_published,
+				`is_pinned` = :is_pinned,
+				`updated_at` = :updated_at
+			WHERE '. $this->contentsTable .'.`id` = :id';
+
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':content_title', $contentTitle);
+		$stmt->bindValue(':content_slug', $contentSlug);
+		$stmt->bindValue(':content_cover_image', $contentCoverImage);
+		$stmt->bindValue(':content_cover_image_alt', $contentCoverImageAlt);
+		$stmt->bindValue(':content_category', $contentCategory);
+		$stmt->bindValue(':content_main_file', $contentMainFile);
+		$stmt->bindValue(':content_main_file_ext_server', $contentMainFileExtServer);
+		$stmt->bindValue(':content_overview', $contentOverview);
+		$stmt->bindValue(':content_casts', $contentCasts);
+		$stmt->bindValue(':is_published', $isPublished);
+		$stmt->bindValue(':is_pinned', $isPinned);
+		$stmt->bindValue(':updated_at', $updatedAt);
+
+		//execute query
+		if($stmt->execute()) {
+			return true;
+		}
+
+		return false;
+
+	}
 
 
 

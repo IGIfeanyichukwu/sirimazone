@@ -37,10 +37,10 @@ if ($commentBody == '') {
 				});
 			</script>";
 
-} else if ($commentBodyCount > 4000) {
+} else if ($commentBodyCount > 1000) {
 
 	echo "<script>
-				mdtoast('Comment is too long. Max of 4000 allowed.', {
+				mdtoast('Comment is too long. Max of 1000 allowed.', {
 					duration: 4000,
 		  			type: 'error',
 		  			interaction: false, 

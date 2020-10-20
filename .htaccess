@@ -8,6 +8,7 @@ RewriteRule ^__admin/delete-content?$ __admin/delete-content.php
 RewriteRule ^__admin/create-content-post?$ __admin/create-content-post.php
 RewriteRule ^__admin/manage-access-id?$ __admin/manage-access-id.php
 RewriteRule ^__admin/manage-content-post?$ __admin/manage-content-post.php
+RewriteRule ^__admin/delete-post-comment?$ __admin/delete-post-comment.php
 RewriteRule ^__admin/test?$ __admin/test.php
 RewriteRule ^__admin/logout?$ __admin/logout.php
 RewriteRule ^404?$ 404.php

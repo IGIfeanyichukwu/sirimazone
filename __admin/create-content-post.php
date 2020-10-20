@@ -117,9 +117,14 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 		<div class="content-external-file">
 			<label for="content-external-file">Content External File</label>
 			<!-- <p>If there are other servers that hosts the content file aside sirimazone's server paste the links below in a comma-separated format.</p> -->
-			 <textarea name="content-external-file" id="content-external-file" placeholder="input all external links in comma-separated format..."></textarea> 
+			 <input type="text" name="content-external-file" id="content-external-file" placeholder="input all external links in comma-separated format...">
 		</div>
 
+		<div class="content-casts">
+			<label for="content-casts">Content casts</label><br>
+			<!-- <p>Input the casts of this content in a comma-separated format below.</p> -->
+			<textarea name="content-casts" id="content-casts" placeholder="content casts..."></textarea>
+		</div>
 
 		<div class="content-overview">
 			<label for="content-overview">Content overview</label><br>
@@ -127,11 +132,6 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 		</div>
 
 
-		<div class="content-casts">
-			<label for="content-casts">Content casts</label><br>
-			<!-- <p>Input the casts of this content in a comma-separated format below.</p> -->
-			<textarea name="content-casts" id="content-casts" placeholder="content casts..."></textarea>
-		</div>
 
 
 		<div class="immediate-publish">

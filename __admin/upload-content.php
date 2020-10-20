@@ -5,6 +5,13 @@ session_start();
 $stepToRoot = '../';
 $pageTitle = 'Upload Content - Sirimazone';
 
+require '../classes/Dbase.php';
+require '../classes/Content.php';
+
+ $database = new Dbase();
+ $db = $database->connect();
+ $content = new Content($db);
+
 //add jquery and upload js scripts
 $usejQuery = true;
 $useAjaxUpload = true;

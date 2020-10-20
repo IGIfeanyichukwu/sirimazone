@@ -153,13 +153,16 @@ require '../temp/header.php';
 	<div class="admin-action-options">
 		<ul>
 			<!-- <li><a href="#"><i class="fas fa-pencil-alt"></i><br><span>Edit Profile</span></a></li> -->
-			<li><a href="../create-content-post"><i class="fas fa-plus"></i><br><span>Create Content Post</span></a></li>
-			<li><a href="#"><i class="fas fa-edit"></i><br><span>Manage Content Posts</span></a></li>
+			<li><a href="../create-content-post"><i class="fas fa-pen"></i><br><span>Create Content Post</span></a></li>
+
+			<li><a href="../manage-content-post"><i class="fas fa-edit"></i><br><span>Manage Content Post</span></a></li>
 
 			<li><a href="../upload-content"><i class="fas fa-cloud-upload-alt"></i><br><span>Upload Content</span></a></li>
 
 			<li><a href="../delete-content"><i class="fas fa-trash"></i><br><span>Delete Content</span></a></li>
-			<li><a href="#"><i class="fas fa-comment-dots"></i><br><span>Manage Post Comments</span></a></li>
+
+			<li><a href="../delete-post-comment"><i class="fas fa-comment-slash"></i><br><span>Delete Post Comment</span></a></li>
+
 			<li><a href="../manage-access-id"><i class="fas fa-user-plus"></i><br><span>Manage Access IDs</span></a></li>
 		</ul>
 	</div>

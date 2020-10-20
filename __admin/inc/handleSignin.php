@@ -20,8 +20,12 @@ if (empty($signinUsername) || empty($signinPassword)) {
     //store the gotten user with all the
     $gottenUser = $returnedStatement->fetch(PDO::FETCH_OBJ);
 
+    if ($gottenUser != null) {
+
     //get actual user name
     $actualUsername = $gottenUser->username;
+
+    }
 
     if($gottenUser != null && strcmp($signinUsername, $actualUsername) === 0) {
     	if (password_verify($signinPassword, $gottenUser->password)) {
