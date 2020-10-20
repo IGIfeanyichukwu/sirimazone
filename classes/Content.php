@@ -381,7 +381,28 @@ class Content { //content class
 
 
 		return false;
-		
+
+	}
+
+
+	public function deletePostCommentByCommentID($commentID) {
+
+		$query = 'DELETE FROM '. $this->commentsTable .' WHERE comment_id = :commentID';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//bind values
+		$stmt->bindValue(':commentID', $commentID);
+
+		//execute statement
+		if($stmt->execute()) {
+			return true;
+		}
+
+
+		return false;
+
 	}
 
 

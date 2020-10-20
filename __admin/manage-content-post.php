@@ -31,7 +31,6 @@ if(isset($_POST['select-delete-post-btn'])) {
 	$postToDeleteSlug = $_POST['select-edit-post-input'];
 	
 	if ($content->deleteContentPostBySlug($postToDeleteSlug)) {
-		echo 'post deleted successfully';
 		echo "<script>
 				if( window.history.replaceState) {
 					window.history.replaceState( null, null, window.location.href );
@@ -134,6 +133,13 @@ if(isset($_POST['select-edit-post-btn'])) {
 	// var_dump($gottenPostBySlug);
 	//create an array of categories
 	$categories = array('Hollywood', 'Nollywood', 'Bollywood', 'Others');
+
+	echo "<script>
+			mdtoast('". $gottenPost['content_title'] ." Post fetched and ready for edit.', {
+				duration: 5000,
+	  			type: 'success'
+			});
+		</script>";
 
 	?>
 
