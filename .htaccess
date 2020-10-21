@@ -12,6 +12,7 @@ RewriteRule ^__admin/delete-post-comment?$ __admin/delete-post-comment.php
 RewriteRule ^__admin/test?$ __admin/test.php
 RewriteRule ^__admin/logout?$ __admin/logout.php
 RewriteRule ^404?$ 404.php
+RewriteRule ^search?$ search.php
 
 
 

@@ -170,18 +170,35 @@ class Content { //content class
 
 	}
 
-	public function getPublishedContentPostWithLimit($startLimit, $numberOfResult) {
+	public function getPinnedPublishedContentPost() {
 
-		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :numberOfResult';
+		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" AND is_pinned = "1" ORDER BY `id` DESC';
 
-		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1"  ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $numberOfResult;
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//execute query
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
+
+	}
+
+	public function getPublishedContentPostWithLimit($startLimit, $resultsPerPage) {
+
+		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :resultsPerPage';
+
+		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1"  ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $resultsPerPage;
 
 		//prepare statement
 		$stmt = $this->conn->prepare($query);
 
 		//bind values
 		// $stmt->bindValue(':startLimit', $startLimit);
-		// $stmt->bindValue(':numberOfResult', $numberOfResult);
+		// $stmt->bindValue(':resultsPerPage', $resultsPerPage);
 
 		//execute query
 		$stmt->execute();
@@ -194,18 +211,18 @@ class Content { //content class
 	}
 
 
-	public function getPublishedCatPostWithLimit($category, $startLimit, $numberOfResult) {
+	public function getPublishedCatPostWithLimit($category, $startLimit, $resultsPerPage) {
 
-		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :numberOfResult';
+		// $query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" LIMIT :startLimit , :resultsPerPage';
 
-		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" AND content_category = :category ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $numberOfResult;
+		$query = 'SELECT * FROM '.$this->contentsTable. ' WHERE is_published = "1" AND content_category = :category ORDER BY `id` DESC LIMIT ' . $startLimit . ' , '. $resultsPerPage;
 
 		//prepare statement
 		$stmt = $this->conn->prepare($query);
 
 		//bind values
 		$stmt->bindValue(':category', $category);
-		// $stmt->bindValue(':numberOfResult', $numberOfResult);
+		// $stmt->bindValue(':resultsPerPage', $resultsPerPage);
 
 		//execute query
 		$stmt->execute();
@@ -303,6 +320,43 @@ class Content { //content class
 		return $result;
 
 	}
+
+	public function getPostBySearchQuery($likePart) {
+
+		$query = 'SELECT * FROM '.$this->contentsTable . ' WHERE is_published = "1" AND (' . $likePart .') ORDER BY `id` DESC';
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//execute statement
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
+
+	}
+
+
+	public function getPostBySearchQueryWithLimit($likePart, $startLimit, $resultsPerPage) {
+
+		$query = 'SELECT * FROM '.$this->contentsTable . ' WHERE is_published = "1" AND (' . $likePart .') ORDER BY `id` DESC LIMIT ' . $startLimit . ', '. $resultsPerPage;
+
+		//prepare statement
+		$stmt = $this->conn->prepare($query);
+
+		//execute statement
+		$stmt->execute();
+
+		//fetch array
+		$result = $stmt->fetchAll();
+
+		return $result;
+
+	}
+
+
 
 	public function getFilesizeByFilename($filename) {
 

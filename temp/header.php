@@ -24,6 +24,8 @@
 
 	<?php
  		}
+
+$searchPage = 'search';
  ?>
 
 
@@ -33,8 +35,8 @@
 <div class="container">
     <header class="header">
 	<h2>Sirima<span>zone</span></h2>
-	<form action="">
-	    <input type="search" name="search" id="main-search" placeholder="Search here" class="header-search">
+	<form action="<?php echo isset($stepToRoot) ? $stepToRoot . $searchPage : './'. $searchPage; ?>" method="get">
+	    <input type="search" name="query" id="main-search" placeholder="Search here" class="header-search">
 	    <button><i class="fas fa-search"></i></button>
 	</form>
 	
