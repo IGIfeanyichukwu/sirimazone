@@ -32,6 +32,7 @@ $searchPage = 'search';
 </head>
 <body>
 <div class="modal-bg"></div>
+<div class="menu-nav-bg"></div>
 <div class="container">
     <header class="header">
 	<h2>Sirima<span>zone</span></h2>
@@ -104,5 +105,11 @@ $searchPage = 'search';
 <?php } ?>
 	
 	</header>
+	<div class="mobile-header">
+		<div class="mobile-header-wrap">
+			<h2>Sirimazone</h2>
+			<button class="menu-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
+		</div>
+	</div>
 	<div class="main">
             <div class="main-display">

@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"adminAccess.js":[function(require,module,exports) {
+})({"AdminAccess.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,7 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var adminAccess = function adminAccess() {
+var AdminAccess = function AdminAccess() {
   // console.log('From adminlogin.js');
   var openSignup = document.querySelector('.open-signup');
   var openSignin = document.querySelector('.open-signin');
@@ -149,9 +149,9 @@ var adminAccess = function adminAccess() {
   }
 };
 
-var _default = adminAccess;
+var _default = AdminAccess;
 exports.default = _default;
-},{}],"fileDeletion.js":[function(require,module,exports) {
+},{}],"MobileNav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -159,32 +159,41 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var fileDeletion = function fileDeletion() {
-  var deleteFileBtn = document.getElementById('delete-file-btn');
-  var fileDeleteForm = document.getElementById('file-delete-form');
-
-  if (fileDeleteForm !== null) {
-    /*fileDeleteForm.addEventListener('submit', function (e) {
-    	
-    
-    
-    
-    });*/
-  }
+var MobileNav = function MobileNav() {
+  var menuBtn = document.querySelector('.menu-btn');
+  var menuBtnIcon = document.querySelector('.menu-btn i');
+  var menuNavBg = document.querySelector('.menu-nav-bg');
+  var header = document.querySelector('.header');
+  menuBtn.addEventListener('click', function (e) {
+    if (header.classList.contains('open-mobile-nav')) {
+      header.classList.remove('open-mobile-nav');
+      menuBtnIcon.classList.remove('fa-times');
+      menuBtnIcon.classList.add('fa-bars');
+      menuNavBg.classList.remove('show-modal-bg');
+      console.log('nav closed');
+    } else {
+      header.classList.add('open-mobile-nav');
+      menuBtnIcon.classList.add('fa-times');
+      menuBtnIcon.classList.remove('fa-bars');
+      menuNavBg.classList.add('show-modal-bg');
+      console.log('nav opened');
+    }
+  });
+  console.log(menuBtnIcon);
 };
 
-var _default = fileDeletion;
+var _default = MobileNav;
 exports.default = _default;
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
-var _adminAccess = _interopRequireDefault(require("./adminAccess"));
+var _AdminAccess = _interopRequireDefault(require("./AdminAccess"));
 
-var _fileDeletion = _interopRequireDefault(require("./fileDeletion"));
+var _MobileNav = _interopRequireDefault(require("./MobileNav"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("SIRIMAZONE");
-(0, _adminAccess.default)();
-(0, _fileDeletion.default)();
-},{"./adminAccess":"adminAccess.js","./fileDeletion":"fileDeletion.js"}]},{},["script.js"], null)
+(0, _AdminAccess.default)();
+(0, _MobileNav.default)();
+},{"./AdminAccess":"AdminAccess.js","./MobileNav":"MobileNav.js"}]},{},["script.js"], null)

@@ -1,5 +1,5 @@
 
-const adminAccess = () => {
+const AdminAccess = () => {
 
 // console.log('From adminlogin.js');
 
@@ -32,4 +32,4 @@ openSignin.onclick = function () {
 }
 
 
-export default adminAccess;
+export default AdminAccess;

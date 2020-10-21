@@ -1,7 +1,7 @@
-import adminAccess from './adminAccess';
-import fileDeletion from './fileDeletion';
+import AdminAccess from './AdminAccess';
+import MobileNav from './MobileNav';
 
 console.log("SIRIMAZONE");
 
-adminAccess();
-fileDeletion();
+AdminAccess();
+MobileNav();
