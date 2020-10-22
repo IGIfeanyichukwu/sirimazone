@@ -388,8 +388,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-body {
   padding: 0 2rem;
-  border-top: 2px groove #222546;
-  border-bottom: 2px groove #222546;
   margin: 2.5rem 0;
 }
 
@@ -401,13 +399,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .admin-action-options ul {
-  border-top: 2px groove #222546;
-  border-bottom: 2px groove #222546;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0 0px 15px -3px rgba(0, 0, 0, 0.1), 0 0px 6px -2px rgba(0, 0, 0, 0.05);
 }
 .admin-action-options ul li {
   list-style: none;
@@ -422,8 +419,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 4rem;
   background-color: #eee;
   padding: 1rem;
-  border-radius: 100%;
+  border-radius: 10rem;
   margin-bottom: 1rem;
+  width: 6.5rem;
+  height: 6.5rem;
 }
 .admin-action-options ul li a:hover {
   color: #fc6917;
@@ -699,6 +698,181 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
 }
 
+.content-title {
+  color: #222546;
+}
+.content-title + p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+.content-title + p a {
+  color: #000;
+}
+.content-title + p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.single-pg-cover-wrap {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.single-pg-cover-wrap img {
+  max-width: 100%;
+}
+
+.single-pg-casts {
+  margin: 1.5rem 0;
+}
+
+.content-file-info {
+  margin: 1.5rem 0;
+}
+.content-file-info ul {
+  background: rgba(34, 37, 70, 0.1);
+  margin: 1.2rem 0 0 1.5rem;
+  border-left: 0.5rem solid #222546;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+.content-file-info ul li {
+  list-style: none;
+  word-break: break-all;
+  margin: 0.4rem 0;
+}
+
+.content-file-download-link-wrap {
+  margin: 1.5rem 0;
+}
+.content-file-download-link-wrap p {
+  margin: 2rem 0;
+}
+.content-file-download-link-wrap p a {
+  text-decoration: none;
+  background: rgba(252, 105, 23, 0.9);
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+}
+.content-file-download-link-wrap p a:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.other-download-link-wrap {
+  margin: 1.5rem 0;
+}
+.other-download-link-wrap p {
+  margin: 1rem 0;
+}
+.other-download-link-wrap p a {
+  color: #0000be;
+}
+.other-download-link-wrap p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.comment-count-info {
+  margin: 2rem 0 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+.comment-count-info span {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+.comment-count-info .focus-comment-btn {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.all-comments {
+  margin: 2.5rem 0 1rem;
+}
+.all-comments .single-comment {
+  margin: 1rem 0;
+  display: flex;
+}
+.all-comments .single-comment div:nth-child(1) {
+  width: 4rem;
+}
+.all-comments .single-comment div:nth-child(1) span {
+  display: inline-block;
+  background: red;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  background: rgba(34, 37, 70, 0.8);
+  color: #fc6917;
+}
+.all-comments .single-comment div:nth-child(2) {
+  width: auto;
+  max-width: 100%;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) {
+  width: auto;
+  background: #eee;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-left: 0.3rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) p:nth-child(1) {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-size: 1.5rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) p:nth-child(2) {
+  font-size: 1.4rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(2) {
+  font-size: 1.35rem;
+  padding-left: 0.5rem;
+}
+
+.comment-section .comment-div {
+  margin: 1rem 0;
+}
+.comment-section .comment-div form div label {
+  display: block;
+  margin: 0.5rem 0 0.4rem;
+}
+.comment-section .comment-div form div input[type=text] {
+  width: 40rem;
+  max-width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #222546;
+  padding: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+.comment-section .comment-div form div input[type=text]:focus {
+  border: 1px solid #fc6917;
+}
+.comment-section .comment-div form div textarea {
+  width: 40rem;
+  resize: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  max-width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #222546;
+  padding: 0.5rem;
+}
+.comment-section .comment-div form div button {
+  margin-top: 1rem;
+  background: rgba(34, 37, 70, 0.8);
+  border: none;
+  color: white;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.comment-section .comment-div form div button:hover {
+  background: #222546;
+}
+
 @media screen and (max-width: 1000px) {
   .header {
     padding: 2.5rem 0.3rem 2.5rem 0.7rem;
@@ -760,7 +934,8 @@ h1, h2, h3, h4, h5, h6 {
     background: white;
     cursor: pointer;
     z-index: 20;
-    padding: 0.4rem 0.7rem 0;
+    height: 4rem;
+    width: 4rem;
     border-radius: 10rem;
     color: #222546;
   }
@@ -776,6 +951,10 @@ h1, h2, h3, h4, h5, h6 {
     border-top-left-radius: 3.5rem;
     border-bottom-left-radius: 3.5rem;
     width: 98%;
+  }
+
+  .admin-action-options ul {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (max-width: 550px) {
@@ -795,6 +974,15 @@ h1, h2, h3, h4, h5, h6 {
   .cover-image-wrap a img {
     height: 170px !important;
   }
+
+  .admin-action-options ul li a {
+    font-size: 1.5rem;
+  }
+  .admin-action-options ul li a i {
+    font-size: 3rem;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 }
 @media screen and (max-width: 380px) {
   .single-post {
@@ -803,6 +991,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .cover-image-wrap a img {
     height: 150px !important;
+  }
+
+  .admin-action-options ul {
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 336px) {

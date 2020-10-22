@@ -33,8 +33,8 @@ h2 {
 
 .profile-body {
 	padding: 0 2rem;
-	border-top: 2px groove $primary-color2;
-	border-bottom: 2px groove $primary-color2;
+	// border-top: 2px groove $primary-color2;
+	// border-bottom: 2px groove $primary-color2;
 	margin: 2.5rem 0;
 
 }
@@ -49,13 +49,14 @@ h2 {
 
 
 	ul {
-		border-top: 2px groove $primary-color2;
-		border-bottom: 2px groove $primary-color2;
+		// border-top: 2px groove $primary-color2;
+		// border-bottom: 2px groove $primary-color2;
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
 		padding: 2rem 0;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		box-shadow: $shadow-lg2;
 
 
 
@@ -73,8 +74,12 @@ h2 {
 					font-size: 4rem;
 					background-color: #eee;
 					padding: 1rem;
-					border-radius: 100%;
+					border-radius: 10rem;
 					margin-bottom: 1rem;
+					width: 6.5rem;
+					height: 6.5rem;
+
+
 				}
 
 				&:hover {

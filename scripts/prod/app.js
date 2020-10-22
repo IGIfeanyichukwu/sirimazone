@@ -181,6 +181,27 @@ var MobileNav = function MobileNav() {
 
 var _default = MobileNav;
 exports.default = _default;
+},{}],"UserComment.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var UserComment = function UserComment() {
+  var focusCommentBtn = document.querySelector('.focus-comment-btn');
+  var commentAuthorField = document.getElementById('comment-author'); // console.log(focusCommentBtn, commentAuthorField);
+
+  if (focusCommentBtn !== null && commentAuthorField !== null) {
+    focusCommentBtn.addEventListener('click', function (e) {
+      commentAuthorField.focus();
+    });
+  }
+};
+
+var _default = UserComment;
+exports.default = _default;
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
@@ -188,9 +209,12 @@ var _AdminAccess = _interopRequireDefault(require("./AdminAccess"));
 
 var _MobileNav = _interopRequireDefault(require("./MobileNav"));
 
+var _UserComment = _interopRequireDefault(require("./UserComment"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("SIRIMAZONE");
 (0, _AdminAccess.default)();
 (0, _MobileNav.default)();
-},{"./AdminAccess":"AdminAccess.js","./MobileNav":"MobileNav.js"}]},{},["script.js"], null)
+(0, _UserComment.default)();
+},{"./AdminAccess":"AdminAccess.js","./MobileNav":"MobileNav.js","./UserComment":"UserComment.js"}]},{},["script.js"], null)

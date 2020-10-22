@@ -73,7 +73,9 @@
 				background: white;
 				cursor: pointer;
 				z-index: 20;
-				padding: 0.4rem 0.7rem 0;
+				// padding: 0.4rem 0.7rem 0;
+				height: 4rem;
+				width: 4rem;
 				border-radius: 10rem;
 				color: $primary-color2;
 
@@ -97,6 +99,14 @@
 			border-top-left-radius: 3.5rem;
 			border-bottom-left-radius: 3.5rem;
 			width: 98%;
+		}
+	}
+
+
+	.admin-action-options {
+
+		ul {
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 
@@ -133,6 +143,25 @@
 			}
 		}
 	}
+
+	.admin-action-options {
+
+		ul {
+
+			li {
+
+				a {
+					font-size: 1.5rem;
+					i {
+						font-size: 3rem;
+						width: 5.5rem;
+						height: 5.5rem;
+					}
+				}
+			}
+		}
+	}
+
 	
 }
 
@@ -149,6 +178,14 @@
 			}
 		}
 	}
+
+	.admin-action-options {
+
+		ul {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	
 }
 

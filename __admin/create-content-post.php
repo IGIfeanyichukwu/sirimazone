@@ -45,10 +45,10 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 ?>
 
-<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Create Content Post</h2>
+<h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Create Content Post</h3>
 
 <!-- <p>You can create a content post below. Provide the content's cover image.</p> -->
-
+ 
 
 <div class="content-post-div">
 

@@ -101,24 +101,28 @@ if(isset($_POST['comment-post-btn'])) {
 	<p><?php echo $conInfo['content_overview']; ?></p>
 </div>
 
-<div class="sigle-pg-casts">
+<div class="single-pg-casts">
 	<p><i>Casts: <?php echo $conInfo['content_casts']; ?></i></p>
 </div>
 
-<div>
+<div class="content-file-info">
 	<h5>FILE INFO</h5>
 	<ul>
 		<li><i>Filename: <?php echo $conInfo['content_main_file']; ?></i></li>
 		<li><i>Filesize: <?php echo $file_size; ?></i></li>
-	</ul>
+	</ul>	
 </div>
 
 <div>
 <?php if($conInfo['content_main_file'] != null) { ?>
 
-	<h5>DOWNLOAD LINK</h5>
+	<div class="content-file-download-link-wrap">
 
-	<p><a href="<?php echo $uploadDir . $conInfo['content_main_file']; ?>" download>Download</a></p>
+		<h5>DOWNLOAD LINK</h5>
+
+		<p><a href="<?php echo $uploadDir . $conInfo['content_main_file']; ?>" download><i class="fas fa-cloud-download-alt"> </i> Download</a></p>
+
+	</div>
 
 <?php 
 
@@ -129,6 +133,8 @@ if( $conInfo['content_main_file_ext_server'] != null) {
 	$linkArr = explode(';', $conInfo['content_main_file_ext_server']); 
 
 ?>
+
+	<div class="other-download-link-wrap">
 	<h5>OTHER DOWNLOAD LINKS</h5>
 	<p>
 	<?php 
@@ -144,27 +150,32 @@ if( $conInfo['content_main_file_ext_server'] != null) {
 	?>
 		
 	</p>
+	</div>
 
 <?php } ?>
 	
 </div>
 
-<br><br>
-
-<div>
+<div class="comment-count-info">
 	<span><?php if($commentArr != null) {
-		echo count($commentArr). ' Comments ';
+		$commentNo = count($commentArr);
+		echo $commentNo == 1 ? $commentNo. ' Comment ' : $commentNo. ' Comments ';
 	} else {
 		echo '0 Comments, Be the first to add a comment. ';
 	} ?></span>
-	<span>Add a comment</span>
+	<span class="focus-comment-btn">Add a comment</span>
 </div>
 
 <?php 
 
 if($commentArr != null) {
 
+?>
 
+<div class="all-comments">
+	
+
+<?php
 // print_r($commentArr);
 foreach ($commentArr as $comment) {
 
@@ -191,6 +202,12 @@ foreach ($commentArr as $comment) {
 
 }
 
+?> 
+
+</div>
+
+<?php
+
 
 }
 
@@ -199,19 +216,17 @@ foreach ($commentArr as $comment) {
 <br>
 <div class="comment-section">
 
-	<div>
-		<p>Add a comment here</p>		
-	</div>
+	<h5>Leave a comment</h5>
 	
 	<div class="comment-div">
 		<form action="" method="post">
 			<div>
 				<label for="comment-author">Name</label>
 				<input type="text" name="comment-author" id="comment-author">
-			</div><br>
+			</div>
 			<div>
 				<label for="comment-text">Comment</label>
-				<textarea name="comment-body" id="comment-body" required></textarea>
+				<textarea name="comment-body" id="comment-body" rows="4" required></textarea>
 			</div>
 			<div>
 				<button type="submit" name="comment-post-btn">Post Comment</button>
