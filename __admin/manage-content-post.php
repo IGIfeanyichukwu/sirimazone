@@ -137,7 +137,7 @@ if(isset($_POST['select-edit-post-btn'])) {
 	echo "<script>
 			mdtoast('". $gottenPost['content_title'] ." Post fetched and ready for edit.', {
 				duration: 5000,
-	  			type: 'success'
+	  			type: 'info'
 			});
 		</script>";
 

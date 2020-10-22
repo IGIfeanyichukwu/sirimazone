@@ -31,7 +31,7 @@ $qsPos = strpos($lstUri, $querysign);
 
  $publishedPosts = $publishedPostsStatement->fetchAll();
 
- $resultsPerPage = 6;
+ $resultsPerPage = 18;
 
  $uploadDir = "../uploadz/";
 
@@ -78,13 +78,13 @@ if($publishedPosts != null) {
 				$timeStamp = $publishedPost['created_at'];
 			?>
 
-			<div>
+			<div class="single-post">
 				<div class="cover-image-wrap">
-					<img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt="">
+					<a href="<?php echo '../contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt=""></a>
 				</div>
 				<div class="brief-details">
 					<h4><a href="<?php echo '../contents/' . $publishedPost['content_slug']; ?>"><?php echo $publishedPost['content_title']; ?></a></h4>
-					<p><small><i class="fas fa-calendar-alt"></i> <?php echo date('F j, Y', $timeStamp); ?> </small> <small><a href="<?php echo '../category/'. strtolower($publishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i> <?php echo $publishedPost['content_category']; ?></a></small></p>
+					<p><small><i class="fas fa-calendar-alt"></i> <?php echo date('M j, Y', $timeStamp); ?> </small> <small><a href="<?php echo '../category/'. strtolower($publishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i> <?php echo $publishedPost['content_category']; ?></a></small></p>
 				</div>
 			</div>
 
@@ -113,7 +113,7 @@ if($publishedPosts != null) {
 
 					if($page == $gottenPageNum) {
 
-						array_push($pagArr, '<a href="./'. $page. '" style="background: green;" class="active-pag-no">'. $page .'</a> ');
+						array_push($pagArr, '<a href="./'. $page. '"  class="active-pag-no">'. $page .'</a> ');
 
 					} else {
 
@@ -152,12 +152,13 @@ if($publishedPosts != null) {
 			?>
 
 		<div class="pagination-wrapper">
+			<div>
 				
 			<?php
 			
 
 
-			echo '<span>Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
+			echo '<span class="page-num-info">Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
 			if($gottenPageNum == 2) {
 				echo ' <span><a href="../" title="previous"><i class="fas fa-angle-double-left"></i></a></span> ';
 
@@ -171,16 +172,18 @@ if($publishedPosts != null) {
 			}
 
 			if($gottenPageNum == $numberOfPages) {
-				echo ' <span style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
 			} else {
 				echo ' <span><a href="./'. ($gottenPageNum + 1) .'" title="next"><i class="fas fa-angle-double-right"></i></a></span>';
 			}
 
 
-			echo ' <span><a href="./'. $numberOfPages .'">last</a></span>';
+			echo ' <span class="last-page-num"><a href="./'. $numberOfPages .'">Last</a></span>';
 
 
 			?>
+
+			</div>
 
 		</div>
 

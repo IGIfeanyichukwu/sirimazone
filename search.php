@@ -19,7 +19,7 @@ $pageTitle = 'You searched for '. $searchQuery .' - Sirimazone';
 
  $uploadDir = "./uploadz/";
 
- $resultsPerPage = 3;
+ $resultsPerPage = 18;
 
 
 require_once './temp/header.php';
@@ -41,7 +41,7 @@ $likeQuery = substr($likeQuery, 0, (strlen($likeQuery) - 4));
 $returnedQueryArr = $content->getPostBySearchQuery($likeQuery);
 
 ?>
-<h2>Search Results for - "<?php echo $searchQuery; ?>"</h2>
+<h2 class="search-page-header">Search Results for - "<?php echo $searchQuery; ?>"</h2>
 <p><i><?php echo 'Results found: '. count($returnedQueryArr); ?></i></p>
 
 	
@@ -87,13 +87,13 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 					$postTimestamp = $returnedResult['created_at'];
 				?>
 
-				<div>
+				<div class="single-post">
 					<div class="cover-image-wrap">
 						<a href="<?php echo './contents/' . $returnedResult['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$returnedResult['content_cover_image']; ?>" alt=""></a>
 					</div>
 					<div class="brief-details">
 						<h4><a href="<?php echo './contents/' . $returnedResult['content_slug']; ?>"><?php echo $returnedResult['content_title']; ?></a></h4>
-						<p><small><i class="fas fa-calendar-alt"></i><?php echo date('F j, Y', $postTimestamp); ?> </small> <small><a href="<?php echo './category/'. strtolower($returnedResult['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i><?php echo $returnedResult['content_category']; ?></a></small></p>
+						<p><small><i class="fas fa-calendar-alt"></i> <?php echo date('M j, Y', $postTimestamp); ?> </small> &nbsp;<small><a href="<?php echo './category/'. strtolower($returnedResult['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i> <?php echo $returnedResult['content_category']; ?></a></small></p>
 					</div>
 				</div>
 
@@ -112,7 +112,7 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 
 					if($page == $gottenPageNum) {
 
-						array_push($pagArr, '<a href="./search?query='. $searchQuery.'&page='. $page. '" style="background: green;" class="active-pag-no">'. $page .'</a> ');
+						array_push($pagArr, '<a href="./search?query='. $searchQuery.'&page='. $page. '" class="active-pag-no">'. $page .'</a> ');
 
 					} else {
 
@@ -152,14 +152,16 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 			?>
 
 		<div class="pagination-wrapper">
+
+			<div>
 				
 			<?php
 			
 
 
-			echo '<span>Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
+			echo '<span class="page-num-info">Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
 			if($gottenPageNum == 1) {
-				echo ' <span style="cursor: not-allowed;"><i class="fas fa-angle-double-left"></i></span> ';
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed;"><i class="fas fa-angle-double-left"></i></span> ';
 
 			} else {
 				echo ' <span><a href="./search?query='. $searchQuery.'&page='. ($gottenPageNum - 1) .'" title="previous"><i class="fas fa-angle-double-left"></i></a></span> ';
@@ -171,16 +173,18 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 			}
 
 			if($gottenPageNum == $numberOfPages) {
-				echo ' <span style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
 			} else {
 				echo ' <span><a href="./search?query='. $searchQuery.'&page='. ($gottenPageNum + 1) .'" title="next"><i class="fas fa-angle-double-right"></i></a></span>';
 			}
 
 
-			echo ' <span><a href="./search?query='. $searchQuery.'&page='. $numberOfPages .'">last</a></span>';
+			echo ' <span class="last-page-num"><a href="./search?query='. $searchQuery.'&page='. $numberOfPages .'">Last</a></span>';
 
 
 			?>
+
+			</div>
 
 		</div>
 
@@ -219,6 +223,7 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 <?php
 
 
+require_once './inc/extraFooter.php';
 
 require_once './temp/footer.php';
 

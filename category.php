@@ -15,7 +15,7 @@ $publishedPostsStatement = $content->getPublishedContentPost();
  $publishedPosts = $publishedPostsStatement->fetchAll();
 
 
- $resultsPerPage = 2;
+ $resultsPerPage = 18;
 
  $uploadDir = "../../uploadz/";
 
@@ -79,7 +79,7 @@ require_once './temp/header.php';
 $publishedCatPosts = $content->getPublishedPostByCat($gottenCategory);
 
 ?>
-<h3>Category: <?php echo ucwords($gottenCategory); ?></h3>
+<h3 class="category-header">Category: <?php echo ucwords($gottenCategory); ?></h3>
 
 <?php
 
@@ -118,13 +118,13 @@ $limitedPublishedCatPosts = $content->getPublishedCatPostWithLimit($gottenCatego
 			$timeStamp = $publishedCatPost['created_at'];
 		?>
 
-		<div>
-			<div class="cat-cover-image-wrap">
-				<img width="250px" src="<?php echo $uploadDir.$publishedCatPost['content_cover_image']; ?>" alt="">
+		<div class="single-post">
+			<div class="cover-image-wrap">
+				<a href="<?php echo '../../contents/' . $publishedCatPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedCatPost['content_cover_image']; ?>" alt=""></a>
 			</div>
-			<div class="cat-brief-details">
+			<div class="brief-details">
 				<h4><a href="<?php echo '../../contents/' . $publishedCatPost['content_slug']; ?>"><?php echo $publishedCatPost['content_title']; ?></a></h4>
-				<p><small><i class="fas fa-calendar-alt"></i><?php echo date('F j, Y', $timeStamp); ?> </small> <small><i class="fas fa-folder-open"></i><?php echo $publishedCatPost['content_category']; ?></small></p>
+				<p><small><i class="fas fa-calendar-alt"></i> <?php echo date('M j, Y', $timeStamp); ?> </small> &nbsp;<small><a href="<?php echo '../../category/'. strtolower($publishedCatPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i> <?php echo $publishedCatPost['content_category']; ?></a></small></p>
 			</div>
 		</div>
 
@@ -145,7 +145,7 @@ $limitedPublishedCatPosts = $content->getPublishedCatPostWithLimit($gottenCatego
 
 					if($page == $gottenPageNum) {
 
-						array_push($pagArr, '<a href="./'. $page. '" style="background: green;" class="active-pag-no">'. $page .'</a> ');
+						array_push($pagArr, '<a href="./'. $page. '" class="active-pag-no">'. $page .'</a> ');
 
 					} else {
 
@@ -185,14 +185,15 @@ $limitedPublishedCatPosts = $content->getPublishedCatPostWithLimit($gottenCatego
 			?>
 
 		<div class="pagination-wrapper">
+			<div>
 				
 			<?php
 			
 
 
-			echo '<span>Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
+			echo '<span class="page-num-info">Page '. $gottenPageNum .' of '. $numberOfPages .'</span> ';
 			if($gottenPageNum == 1) {
-				echo ' <span style="cursor: not-allowed;"><i class="fas fa-angle-double-left"></i></span> ';
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed;"><i class="fas fa-angle-double-left"></i></span> ';
 
 			} else {
 				echo ' <span><a href="./'. ($gottenPageNum - 1) .'" title="previous"><i class="fas fa-angle-double-left"></i></a></span> ';
@@ -204,16 +205,18 @@ $limitedPublishedCatPosts = $content->getPublishedCatPostWithLimit($gottenCatego
 			}
 
 			if($gottenPageNum == $numberOfPages) {
-				echo ' <span style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed;"><i class="fas fa-angle-double-right"></i></span>';
 			} else {
 				echo ' <span><a href="./'. ($gottenPageNum + 1) .'" title="next"><i class="fas fa-angle-double-right"></i></a></span>';
 			}
 
 
-			echo ' <span><a href="./'. $numberOfPages .'">last</a></span>';
+			echo ' <span class="last-page-num"><a href="./'. $numberOfPages .'">Last</a></span>';
 
 
 			?>
+
+			</div>
 
 		</div>
 

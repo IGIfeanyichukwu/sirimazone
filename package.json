@@ -8,7 +8,7 @@
     "build:js": "parcel watch -d ./scripts/prod -o app.js --no-hmr --no-autoinstall --no-cache --no-source-maps ./scripts/dev/script.js",
     "php-server": "php -S localhost:4040",
     "dev-scripts": "start npm run php-server && start npm run build:js && npm run build:sass",
-    "dev-scripts-no-php-server": "npm run build:sass && start npm run build:js"
+    "dev-scripts-no-php-server": "start npm run build:js && npm run build:sass"
   },
   "keywords": [
     "movie",

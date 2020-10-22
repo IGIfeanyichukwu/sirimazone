@@ -39,10 +39,18 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     height: 100vh;
     width: 100vw;
-    z-index: 19;
+    // z-index: 19;
     transition: opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
+}
+
+.modal-bg {
+    z-index: 100;
+}
+
+.menu-nav-bg {
+    z-index: 16;
 }
 
 .show-modal-bg {

@@ -7,6 +7,10 @@
 
 	}
 
+	.random-movie-container {
+		padding: 1rem;
+	}
+
 	.main-display {
 		width: 97%;
 	}
@@ -32,13 +36,20 @@
 		max-width: 100%;
 		padding: 2.5rem 1rem;
 
-
 	}
 
 	.mobile-header {
 		display: block !important;
 		position: relative;
 		padding: 0 2.4rem;
+
+		h2 {
+		    color: $primary-color2;
+		    
+		    span {
+		        color: $sec-color;
+		    }
+	    }
 
 		&-wrap {
 			// background: pink;
@@ -64,6 +75,7 @@
 				z-index: 20;
 				padding: 0.4rem 0.7rem 0;
 				border-radius: 10rem;
+				color: $primary-color2;
 
 			}
 
@@ -89,4 +101,74 @@
 	}
 
 
+}
+
+@media screen and (max-width: 550px) {
+
+	.single-post {
+		width: 150px !important;
+	}
+
+	.cover-image-wrap {
+		a {
+			img {
+				height: 200px !important;
+			}
+		}
+	}
+	
+}
+
+
+@media screen and (max-width: 420px) {
+
+	.single-post {
+		width: 130px !important;
+	}
+
+	.cover-image-wrap {
+		a {
+			img {
+				height: 170px !important;
+			}
+		}
+	}
+	
+}
+
+@media screen and (max-width: 380px) {
+
+	.single-post {
+		width: 110px !important;
+	}
+
+	.cover-image-wrap {
+		a {
+			img {
+				height: 150px !important;
+			}
+		}
+	}
+	
+}
+
+
+@media screen and (max-width: 336px) {
+
+	.single-post {
+		width: 170px !important;
+	}
+
+	.cover-image-wrap {
+		a {
+			img {
+				height: 200px !important;
+			}
+		}
+	}
+
+	.pinned-posts {
+		justify-content: center;
+	}
+	
 }

@@ -48,10 +48,17 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 19;
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
+}
+
+.modal-bg {
+  z-index: 100;
+}
+
+.menu-nav-bg {
+  z-index: 16;
 }
 
 .show-modal-bg {
@@ -220,6 +227,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .login-icon-wrap div:nth-child(2) {
   font-size: 1.4rem;
+}
+
+.disclaimer p {
+  opacity: 0.9;
 }
 
 .main {
@@ -569,9 +580,132 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.3rem 0;
 }
 
+.all-posts, .pinned-posts, .category-posts, .search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.all-posts .single-post, .pinned-posts .single-post, .category-posts .single-post, .search-results .single-post {
+  margin: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.all-posts .single-post:hover, .pinned-posts .single-post:hover, .category-posts .single-post:hover, .search-results .single-post:hover {
+  background: rgba(252, 105, 23, 0.3);
+}
+.all-posts .single-post:hover .cover-image-wrap a img, .pinned-posts .single-post:hover .cover-image-wrap a img, .category-posts .single-post:hover .cover-image-wrap a img, .search-results .single-post:hover .cover-image-wrap a img {
+  transform: scale(1);
+}
+.all-posts .single-post .cover-image-wrap, .pinned-posts .single-post .cover-image-wrap, .category-posts .single-post .cover-image-wrap, .search-results .single-post .cover-image-wrap {
+  margin-bottom: 1rem;
+}
+.all-posts .single-post .cover-image-wrap a img, .pinned-posts .single-post .cover-image-wrap a img, .category-posts .single-post .cover-image-wrap a img, .search-results .single-post .cover-image-wrap a img {
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.all-posts .single-post .brief-details, .pinned-posts .single-post .brief-details, .category-posts .single-post .brief-details, .search-results .single-post .brief-details {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.all-posts .single-post .brief-details h4, .pinned-posts .single-post .brief-details h4, .category-posts .single-post .brief-details h4, .search-results .single-post .brief-details h4 {
+  font-weight: 550;
+}
+.all-posts .single-post .brief-details h4 a, .pinned-posts .single-post .brief-details h4 a, .category-posts .single-post .brief-details h4 a, .search-results .single-post .brief-details h4 a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
+.all-posts .single-post .brief-details p, .pinned-posts .single-post .brief-details p, .category-posts .single-post .brief-details p, .search-results .single-post .brief-details p {
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+.all-posts .single-post .brief-details p a, .pinned-posts .single-post .brief-details p a, .category-posts .single-post .brief-details p a, .search-results .single-post .brief-details p a {
+  color: #000;
+}
+.all-posts .single-post .brief-details p a:hover, .pinned-posts .single-post .brief-details p a:hover, .category-posts .single-post .brief-details p a:hover, .search-results .single-post .brief-details p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.all-pinned-posts {
+  margin-bottom: 3rem;
+}
+.all-pinned-posts h3 {
+  color: #222546;
+}
+
+.pinned-posts {
+  justify-content: flex-start;
+}
+
+.all-contents-post-header, .all-pinned-posts-header, .category-header {
+  color: #222546;
+  margin-bottom: 1rem;
+}
+
+.search-page-header {
+  color: #222546;
+}
+.search-page-header + p {
+  opacity: 0.8;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-wrapper {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.pagination-wrapper div {
+  display: inline-block;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.pagination-wrapper div a {
+  text-decoration: none;
+  color: #222546;
+  margin: 0 0.3rem;
+}
+.pagination-wrapper div a:hover {
+  color: #fc6917;
+}
+.pagination-wrapper div span {
+  margin: 0 1rem;
+}
+.pagination-wrapper div .page-num-info, .pagination-wrapper div .last-page-num {
+  font-size: 1.4rem;
+  color: #222546;
+}
+.pagination-wrapper div .not-allowed-page-num {
+  opacity: 0.5;
+}
+.pagination-wrapper div .active-pag-no {
+  border-radius: 10rem;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.5rem;
+  border: 1px solid #fc6917;
+  padding-bottom: 1rem;
+}
+
 @media screen and (max-width: 1000px) {
   .header {
     padding: 2.5rem 0.3rem 2.5rem 0.7rem;
+  }
+
+  .random-movie-container {
+    padding: 1rem;
   }
 
   .main-display {
@@ -602,6 +736,12 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     padding: 0 2.4rem;
   }
+  .mobile-header h2 {
+    color: #222546;
+  }
+  .mobile-header h2 span {
+    color: #fc6917;
+  }
   .mobile-header-wrap {
     display: flex;
     justify-content: space-between;
@@ -622,6 +762,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 20;
     padding: 0.4rem 0.7rem 0;
     border-radius: 10rem;
+    color: #222546;
   }
 
   .main {
@@ -635,5 +776,45 @@ h1, h2, h3, h4, h5, h6 {
     border-top-left-radius: 3.5rem;
     border-bottom-left-radius: 3.5rem;
     width: 98%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .single-post {
+    width: 150px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 200px !important;
+  }
+}
+@media screen and (max-width: 420px) {
+  .single-post {
+    width: 130px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 170px !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .single-post {
+    width: 110px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 150px !important;
+  }
+}
+@media screen and (max-width: 336px) {
+  .single-post {
+    width: 170px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 200px !important;
+  }
+
+  .pinned-posts {
+    justify-content: center;
   }
 }

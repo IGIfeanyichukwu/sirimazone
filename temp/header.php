@@ -107,7 +107,7 @@ $searchPage = 'search';
 	</header>
 	<div class="mobile-header">
 		<div class="mobile-header-wrap">
-			<h2>Sirimazone</h2>
+			<h2>Sirima<span>zone</span></h2>
 			<button class="menu-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
 		</div>
 	</div>

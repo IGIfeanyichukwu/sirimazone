@@ -17,7 +17,7 @@ require './classes/Content.php';
 
  $publishedPosts = $publishedPostsStatement->fetchAll();
 
- $resultsPerPage = 6;
+ $resultsPerPage = 18;
 
 $limitedPublishedPosts = $content->getPublishedContentPostWithLimit(0, $resultsPerPage);
 
@@ -33,25 +33,30 @@ require_once './temp/header.php';
 
 ?>
 	
-	<div class="all-pinned-posts">
-		<h3>📌 Pinned Posts</h3>
-		<div class="pinned-posts">
 			<?php
 
 			// var_dump($pinnedPublishedPosts);
 			if ($pinnedPublishedPosts != null) {
 
+				?>
+
+	<div class="all-pinned-posts">
+		<h3 class="all-pinned-posts-header">📌 Pinned Posts</h3>
+		<div class="pinned-posts">
+
+				<?php
+
 				foreach ($pinnedPublishedPosts as $pinnedPublishedPost) {
 					$pinnedPublishedPostTime = $pinnedPublishedPost['created_at'];
 				?>
 
-				<div>
+				<div class="single-post">
 					<div class="cover-image-wrap">
 						<a href="<?php echo './contents/' . $pinnedPublishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$pinnedPublishedPost['content_cover_image']; ?>" alt=""></a>
 					</div>
 					<div class="brief-details">
 						<h4><a href="<?php echo './contents/' . $pinnedPublishedPost['content_slug']; ?>"><?php echo $pinnedPublishedPost['content_title']; ?></a></h4>
-						<p><small><i class="fas fa-calendar-alt"></i><?php echo date('F j, Y', $pinnedPublishedPostTime); ?> </small> <small><a href="<?php echo './category/'. strtolower($pinnedPublishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i><?php echo $pinnedPublishedPost['content_category']; ?></a></small></p>
+						<p><small><i class="fas fa-calendar-alt"></i><?php echo date('F j, Y', $pinnedPublishedPostTime); ?> </small> &nbsp;<small><a href="<?php echo './category/'. strtolower($pinnedPublishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i><?php echo $pinnedPublishedPost['content_category']; ?></a></small></p>
 					</div>
 				</div>
 
@@ -66,7 +71,7 @@ require_once './temp/header.php';
 	</div>
 
 
-	<h3>All Content Posts</h3>
+	<h3 class="all-contents-post-header">All Content Posts</h3>
 
 		<?php
 
@@ -86,13 +91,13 @@ require_once './temp/header.php';
 			$timeStamp = $publishedPost['created_at'];
 		?>
 
-		<div>
+		<div class="single-post">
 			<div class="cover-image-wrap">
 				<a href="<?php echo './contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt=""></a>
 			</div>
 			<div class="brief-details">
 				<h4><a href="<?php echo './contents/' . $publishedPost['content_slug']; ?>"><?php echo $publishedPost['content_title']; ?></a></h4>
-				<p><small><i class="fas fa-calendar-alt"></i><?php echo date('F j, Y', $timeStamp); ?> </small> <small><a href="<?php echo './category/'. strtolower($publishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i><?php echo $publishedPost['content_category']; ?></a></small></p>
+				<p><small><i class="fas fa-calendar-alt"></i> <?php echo date('M j, Y', $timeStamp); ?> </small> &nbsp;<small><a href="<?php echo './category/'. strtolower($publishedPost['content_category']).'/1'; ?>"><i class="fas fa-folder-open"></i> <?php echo $publishedPost['content_category']; ?></a></small></p>
 			</div>
 		</div>
 
@@ -147,27 +152,34 @@ require_once './temp/header.php';
 		?>
 
 		<div class="pagination-wrapper">
+			<div>
 
 		<?php
 
-			echo '<span>Page 1 of '. $numberOfPages .'</span> ';
-			echo ' <span style="cursor: not-allowed"><i class="fas fa-angle-double-left"></i></span> ';
+			echo '<span class="page-num-info">Page 1 of '. $numberOfPages .'</span> ';
+			echo ' <span class="not-allowed-page-num" style="cursor: not-allowed"><i class="fas fa-angle-double-left"></i></span> ';
 
 
 			foreach ($pagArr as $arr) {
 				echo $arr;
 			}
 
+			if($numberOfPages != 1) {
+				echo ' <span><a href="./page/2" title="next"><i class="fas fa-angle-double-right"></i></a></span>';
+			} else {
+				echo ' <span class="not-allowed-page-num" style="cursor: not-allowed"><i class="fas fa-angle-double-right"></i></span>';
+			}
 
-			echo ' <span><a href="./page/2" title="next"><i class="fas fa-angle-double-right"></i></a></span>';
 
-			echo ' <span><a href="./page/'. $numberOfPages .'">last</a></span>';
+
+			echo ' <span class="last-page-num"><a href="./page/'. $numberOfPages .'">Last</a></span>';
 
 
 
 
 
 		?>
+		</div>
 
 		</div>
 
