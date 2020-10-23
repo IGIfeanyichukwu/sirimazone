@@ -71,9 +71,9 @@ if(isset($_POST['delete-comment-post-btn'])) {
 
 ?>
 
-<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Delete Post Comment</h2>
+<h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Delete Post Comment</h3>
 
-<p>You can delete post comment here.</p>
+<p>You can fetch comments from a post and then delete afterwards here.</p>
 
 <div class="alert-role-box">
 	<b>NB:</b> You can only delete comments under your posts.
@@ -81,7 +81,7 @@ if(isset($_POST['delete-comment-post-btn'])) {
 
 
 
-<div>
+<div class="select-comment-post-form-div">
 	
 	<form action="" method="post" id="select-comment-post-form">
 		<select name="select-comment-post-input" required>
@@ -97,12 +97,13 @@ if(isset($_POST['delete-comment-post-btn'])) {
 
 			?>
 		</select>
-		<button type="submit" name="select-comment-post-btn">Fetch Comments</button>
+		<div>
+			<button type="submit" name="select-comment-post-btn">Fetch Comments</button>
+		</div>
 
 	</form>
 </div>
 
-<br>
 <div class="delete-post-comment-div">
 
 	<?php 

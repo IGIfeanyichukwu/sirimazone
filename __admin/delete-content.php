@@ -117,7 +117,7 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 ?>
 
-<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Delete Content</h2>
+<h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Delete Content</h3>
 <p>To delete a file from Sirimazone's server simply select the file and click the delete button. <small>(Pls give deleting any file a second thought)</small>.</p>
 <p class="alert-role-box">Only one file can be deleted at a time. A File can never be recovered when it is deleted. You can only delete files uploaded by you.</p>
 
@@ -143,9 +143,9 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 		     ?>
 		</select>
 
-
-
-		<button type="submit" id="delete-file-btn">Delete File</button>
+		<div>
+		<button type="submit" id="delete-file-btn"><i class="fas fa-trash"></i> Delete File</button>
+		</div>
 	</form>
 
 </div>

@@ -63,7 +63,7 @@ $numOfIDs = $login->getAvailableAccessIdNum(1);
 $numOfUnusedIDs = $login->getAvailableAccessIdNum(2);
 ?>
 
-<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Manage Access ID</h2>
+<h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Manage Access ID</h3>
 
 <p>A user needs an Access ID to be registered as an <b>ADMIN</b>. Only <b>existing</b> admins can create <b>ACCESS IDs</b> for others to register and become admins. An access id consist of ACCESS NAME and ACCESS KEY.</p>
 
