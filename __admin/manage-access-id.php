@@ -94,7 +94,7 @@ $numOfUnusedIDs = $login->getAvailableAccessIdNum(2);
 	<p>For security reasons, all Access IDs should be cleared from time to time.</p>
 
 	<form action="" method="post">
-		<button type="submit" name="clear-all-btn" id="clear-all-btn">CLEAR ALL ACCESS ID</button>
+		<button type="submit" name="clear-all-btn" id="clear-all-btn"><i class="fas fa-times"></i> CLEAR ALL ACCESS ID</button>
 	</form>
 </div>
 

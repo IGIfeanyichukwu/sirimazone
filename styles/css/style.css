@@ -1124,6 +1124,51 @@ h1, h2, h3, h4, h5, h6 {
   background: red;
 }
 
+.create-access-id-div {
+  margin: 2rem 0;
+}
+.create-access-id-div form div {
+  margin: 1rem 0;
+}
+.create-access-id-div form div label {
+  display: block;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-weight: 600;
+}
+.create-access-id-div form div input {
+  width: 50rem;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+.create-access-id-div form div button {
+  padding: 0.6rem 1rem;
+  background: #222546;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.create-access-id-div form div button:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #fc6917;
+}
+
+.available-access-id form {
+  margin-top: 1rem;
+}
+.available-access-id form button {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.available-access-id form button:hover {
+  color: white;
+  background: red;
+}
+
 @media screen and (max-width: 1000px) {
   .header {
     padding: 2.5rem 0.3rem 2.5rem 0.7rem;
@@ -1206,6 +1251,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .admin-action-options ul {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .file-upload-div {
+    padding: 2rem;
+    margin: 2rem;
   }
 }
 @media screen and (max-width: 550px) {

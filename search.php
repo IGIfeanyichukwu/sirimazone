@@ -89,7 +89,7 @@ if ($gottenPageNum > 0 && $gottenPageNum <= $numberOfPages) {
 
 				<div class="single-post">
 					<div class="cover-image-wrap">
-						<a href="<?php echo './contents/' . $returnedResult['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$returnedResult['content_cover_image']; ?>" alt=""></a>
+						<a href="<?php echo './contents/' . $returnedResult['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$returnedResult['content_cover_image']; ?>" alt="<?php echo $returnedResult['content_cover_image_alt']; ?>"></a>
 					</div>
 					<div class="brief-details">
 						<h4><a href="<?php echo './contents/' . $returnedResult['content_slug']; ?>"><?php echo $returnedResult['content_title']; ?></a></h4>

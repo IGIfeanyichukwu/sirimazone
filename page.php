@@ -80,7 +80,7 @@ if($publishedPosts != null) {
 
 			<div class="single-post">
 				<div class="cover-image-wrap">
-					<a href="<?php echo '../contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt=""></a>
+					<a href="<?php echo '../contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt="<?php echo $publishedPost['content_cover_image_alt']; ?>"></a>
 				</div>
 				<div class="brief-details">
 					<h4><a href="<?php echo '../contents/' . $publishedPost['content_slug']; ?>"><?php echo $publishedPost['content_title']; ?></a></h4>

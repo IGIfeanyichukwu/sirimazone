@@ -120,7 +120,7 @@ $limitedPublishedCatPosts = $content->getPublishedCatPostWithLimit($gottenCatego
 
 		<div class="single-post">
 			<div class="cover-image-wrap">
-				<a href="<?php echo '../../contents/' . $publishedCatPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedCatPost['content_cover_image']; ?>" alt=""></a>
+				<a href="<?php echo '../../contents/' . $publishedCatPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedCatPost['content_cover_image']; ?>" alt="<?php echo $publishedCatPost['content_cover_image_alt']; ?>"></a>
 			</div>
 			<div class="brief-details">
 				<h4><a href="<?php echo '../../contents/' . $publishedCatPost['content_slug']; ?>"><?php echo $publishedCatPost['content_title']; ?></a></h4>

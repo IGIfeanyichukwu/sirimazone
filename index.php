@@ -52,7 +52,7 @@ require_once './temp/header.php';
 
 				<div class="single-post">
 					<div class="cover-image-wrap">
-						<a href="<?php echo './contents/' . $pinnedPublishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$pinnedPublishedPost['content_cover_image']; ?>" alt=""></a>
+						<a href="<?php echo './contents/' . $pinnedPublishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$pinnedPublishedPost['content_cover_image']; ?>" alt="<?php echo $pinnedPublishedPost['content_cover_image_alt']; ?>"></a>
 					</div>
 					<div class="brief-details">
 						<h4><a href="<?php echo './contents/' . $pinnedPublishedPost['content_slug']; ?>"><?php echo $pinnedPublishedPost['content_title']; ?></a></h4>
@@ -62,13 +62,16 @@ require_once './temp/header.php';
 
 				<?php
 				}
+				?>
 
+		</div>
+	</div>
+
+<?php
 
 			}
 
 			 ?>
-		</div>
-	</div>
 
 
 	<h3 class="all-contents-post-header">All Content Posts</h3>
@@ -93,7 +96,7 @@ require_once './temp/header.php';
 
 		<div class="single-post">
 			<div class="cover-image-wrap">
-				<a href="<?php echo './contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt=""></a>
+				<a href="<?php echo './contents/' . $publishedPost['content_slug']; ?>"><img width="250px" src="<?php echo $uploadDir.$publishedPost['content_cover_image']; ?>" alt="<?php echo $publishedPost['content_cover_image_alt']; ?>"></a>
 			</div>
 			<div class="brief-details">
 				<h4><a href="<?php echo './contents/' . $publishedPost['content_slug']; ?>"><?php echo $publishedPost['content_title']; ?></a></h4>

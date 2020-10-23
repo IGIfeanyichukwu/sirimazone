@@ -1,0 +1,58 @@
+.create-access-id-div {
+	margin: 2rem 0;
+
+	form {
+		div {
+			margin: 1rem 0;
+
+			label {
+				display: block;
+				font-family: nunito, $font-sans;
+				font-weight: 600;
+			}
+
+			input {
+				width: 50rem;
+				max-width: 100%;
+				padding: 0.5rem;
+			}
+
+			button {
+				padding: 0.6rem 1rem;
+				background: $primary-color2;
+				border: none;
+				color: white;
+				border-radius: 0.5rem;
+				cursor: pointer;
+
+
+				&:hover {
+					box-shadow: $shadow-md;
+					color: $sec-color;
+				}
+			}
+
+		}
+	}
+}
+
+.available-access-id {
+
+	form {
+		margin-top: 1rem;
+
+		button {
+			background: rgba(255, 0, 0, 0.7);
+			border: none;
+			padding: 0.7rem 1rem;
+			border-radius: 0.7rem;
+			cursor: pointer;
+			transition: all 0.1s ease;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 0, 0);
+			}
+		}
+	}
+}
