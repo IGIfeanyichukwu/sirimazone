@@ -1,0 +1,146 @@
+
+.content-post-div, .edit-post-form-div {
+
+	form {
+		// background: red;
+		
+
+		div {
+			margin: 2rem 0;
+
+			label {
+				display: block;
+				font-family: nunito, $font-sans;
+				font-weight: 600;
+				font-size: 1.5rem;
+
+				// background: orange;
+			}
+
+			p {
+				font-size: 1.35rem;
+				opacity: 0.8;
+				margin: 0.5rem 0;
+
+				a {
+
+					&:hover {
+						text-decoration: none;
+						color: $primary-color2;
+						border-bottom: 1px solid $sec-color;
+					}
+				}
+			}
+
+			input {
+				
+				padding: 0.5rem;
+				width: 50rem;
+				max-width: 100%;
+
+			}
+
+			select {
+				padding: 0.5rem;
+				height: 3rem;
+				width: 50rem;
+				border-radius: 0.6rem;
+				max-width: 100%;
+
+				option {
+					padding: 0.5rem;
+					height: 3rem;
+					word-break: break-all;
+					// width: 50rem;
+					word-wrap: wrap;
+					margin: 0.5rem 0;
+					
+
+					&:hover {
+						background: $sec-color;
+					}
+
+				}
+			}
+
+			#content-external-file {
+				font-family: monospace;
+			}
+
+			textarea {
+				resize: none;
+				width: 50rem;
+				border-radius: 0.6rem;
+				padding: 0.5rem;
+				font-family: $font-sans;
+				max-width: 100%
+			}
+
+			button {
+				padding: 0.6rem 1rem;
+				background: $primary-color2;
+				border: none;
+				color: white;
+				border-radius: 0.5rem;
+				cursor: pointer;
+
+
+				&:hover {
+					box-shadow: $shadow-md;
+					color: $sec-color;
+				}
+			}
+		}
+	}
+}
+
+
+.select-edit-post-form-div {
+	// background: orange;
+	margin: 3rem 0;
+
+	select {
+		height: 3rem;
+		width: 50rem;
+		max-width: 100%;
+		border-radius: 0.6rem;
+
+	}
+
+	.select-edit-post-btn-wrap {
+		// background: green;
+		padding: 1.5rem 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		button:nth-child(1) {
+			background: secColor(0.6);
+			border: none;
+			padding: 0.7rem 1rem;
+			border-radius: 0.7rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: white;
+				background: secColor(1);
+			}
+		}
+
+		button:nth-child(2) {
+			background: rgba(255, 0, 0, 0.7);
+			border: none;
+			padding: 0.7rem 1rem;
+			border-radius: 0.7rem;
+			cursor: pointer;
+			transition: all 0.1s ease;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 0, 0);
+			}
+		}
+
+	}
+}

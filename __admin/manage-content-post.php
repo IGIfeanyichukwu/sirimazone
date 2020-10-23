@@ -90,7 +90,7 @@ $nonImageUploads = $nonImageUploadsStatement->fetchAll();
 
 ?>
 
-<h2 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Manage Content Post</h2>
+<h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Manage Content Post</h3>
 
 <p>You can edit or delete posts here.</p>
 
@@ -98,7 +98,7 @@ $nonImageUploads = $nonImageUploadsStatement->fetchAll();
 	<b>NB:</b> You can only edit or delete post created by you.
 </div>
 
-<div>
+<div class="select-edit-post-form-div">
 	
 	<form action="" method="post" id="select-edit-post-form">
 		<select name="select-edit-post-input" required>
@@ -114,8 +114,10 @@ $nonImageUploads = $nonImageUploadsStatement->fetchAll();
 
 			?>
 		</select>
-		<button type="submit" name="select-edit-post-btn">Edit Post</button>
-		<button type="submit" name="select-delete-post-btn">Delete Post</button>
+		<div class="select-edit-post-btn-wrap">
+			<button type="submit" name="select-edit-post-btn"><i class="fas fa-edit"></i> Edit Post</button>
+			<button type="submit" name="select-delete-post-btn"><i class="fas fa-trash"></i> Delete Post</button>
+		</div>
 
 	</form>
 </div>
@@ -159,7 +161,7 @@ if(isset($_POST['select-edit-post-btn'])) {
 
 		<div class="content-cover-wrap">
 			<label for="content-cover">Content cover image</label>
-			<!-- <p>Select the cover image for this content post <small>(It is advised that every post should have one.)</small>. Only uploaded image files are in the list. If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p> -->
+			<p>If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p>
 			<select name="content-cover" id="content-cover" required>
 				<option value="<?php echo $gottenPost['content_cover_image'];  ?>"><?php echo $gottenPost['content_cover_image'];  ?></option>
 				<?php
@@ -206,7 +208,7 @@ if(isset($_POST['select-edit-post-btn'])) {
 
 		<div class="content-file">
 			<label for="content-file">Content file</label>
-			<!-- <p>Select the video file for this post from the list below. This will be made downloadable. If the file is also in another (external) server and you want to include it, paste all the links to the external file in a comma-separated format in the next form control.</p> -->
+			<p>Selected file will be made downloadable. If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p>
 			<select name="content-file" id="content-file">
 			<?php
 			if ($gottenPost['content_main_file'] != '') {
@@ -241,19 +243,18 @@ if(isset($_POST['select-edit-post-btn'])) {
 
 		<div class="content-external-file">
 			<label for="content-external-file">Content External File</label>
-			<!-- <p>If there are other servers that hosts the content file aside sirimazone's server paste the links below in a comma-separated format.</p> -->
+			<p>If there are other servers that hosts the content file aside sirimazone's server paste the links below in a semicolon-separated (;) format. Eg. <code>[https://abc.com;http://def.in/file;]</p></code></p>
 			 <input type="text" name="content-external-file" id="content-external-file" placeholder="input all external links in comma-separated format..." value="<?php echo $gottenPost['content_main_file_ext_server']; ?>">
 		</div>
 
 		<div class="content-casts">
-			<label for="content-casts">Content casts</label><br>
-			<!-- <p>Input the casts of this content in a comma-separated format below.</p> -->
-			<textarea name="content-casts" id="content-casts" placeholder="content casts..."><?php echo $gottenPost['content_casts']; ?></textarea>
+			<label for="content-casts">Content casts</label>
+			<textarea name="content-casts" id="content-casts" rows="3" placeholder="content casts..."><?php echo $gottenPost['content_casts']; ?></textarea>
 		</div>
 
 		<div class="content-overview">
-			<label for="content-overview">Content overview</label><br>
-			 <textarea name="content-overview" id="content-overview" placeholder="write something about the content..." required><?php echo $gottenPost['content_overview']; ?></textarea> 
+			<label for="content-overview">Content overview</label>
+			 <textarea name="content-overview" id="content-overview" placeholder="write something about the content..." rows="10" required><?php echo $gottenPost['content_overview']; ?></textarea> 
 		</div>
 
 		<div class="publish-status">

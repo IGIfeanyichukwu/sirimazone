@@ -47,7 +47,7 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 <h3 class="page-title"><span><a href="<?php echo './profile/'.$loggedInUsername; ?>"><i class="fas fa-arrow-left"></i></a></span> Create Content Post</h3>
 
-<!-- <p>You can create a content post below. Provide the content's cover image.</p> -->
+<p>You can create a content post below. Do provide values for the required fields.</p>
  
 
 <div class="content-post-div">
@@ -55,12 +55,12 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 	<form action="" method="post" id="content-post-form">
 		<div class="content-title-wrap">
 			<label for="content-title">Content title</label>
-			<input type="text" name="content-title" id="content-title" placeholder="content title" required>
+			<input type="text" name="content-title" id="content-title" placeholder="give the post a title" required>
 		</div>
 
 		<div class="content-cover-wrap">
 			<label for="content-cover">Content cover image</label>
-			<!-- <p>Select the cover image for this content post <small>(It is advised that every post should have one.)</small>. Only uploaded image files are in the list. If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p> -->
+			<p>If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p>
 			<select name="content-cover" id="content-cover" required>
 				<option value="">--select content's cover image--</option>
 				<?php
@@ -78,7 +78,7 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 		<div class="content-cover-alt-wrap">
 			<label for="content-cover-alt">Content cover alt text</label>
-			<input type="text" name="content-cover-alt" id="content-cover-alt" placeholder="content cover alternative text" required>
+			<input type="text" name="content-cover-alt" id="content-cover-alt" placeholder="alt text for the content's cover image" required>
 		</div>
 
 
@@ -96,7 +96,7 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 		<div class="content-file">
 			<label for="content-file">Content file</label>
-			<!-- <p>Select the video file for this post from the list below. This will be made downloadable. If the file is also in another (external) server and you want to include it, paste all the links to the external file in a comma-separated format in the next form control.</p> -->
+			<p>Selected file will be made downloadable. If you are yet to upload the cover image for this post please, do so in the <a href="./upload-content">upload content section</a>.</p>
 			<select name="content-file" id="content-file">
 				<option value="">--select a category for the content--</option>
 
@@ -116,26 +116,24 @@ if(isset($_SESSION['is_logged_into_sirimazone'])) {
 
 		<div class="content-external-file">
 			<label for="content-external-file">Content External File</label>
-			<!-- <p>If there are other servers that hosts the content file aside sirimazone's server paste the links below in a comma-separated format.</p> -->
-			 <input type="text" name="content-external-file" id="content-external-file" placeholder="input all external links in comma-separated format...">
+			<p>If there are other servers that hosts the content file aside sirimazone's server paste the links below in a semicolon-separated (;) format. Eg. <code>[https://abc.com;http://def.in/file;]</p></code>
+			 <input type="text" name="content-external-file" id="content-external-file" placeholder="input all external links in semicolon-separated (;) format...">
 		</div>
 
 		<div class="content-casts">
-			<label for="content-casts">Content casts</label><br>
-			<!-- <p>Input the casts of this content in a comma-separated format below.</p> -->
-			<textarea name="content-casts" id="content-casts" placeholder="content casts..."></textarea>
+			<label for="content-casts">Content casts</label>
+			<textarea name="content-casts" id="content-casts" placeholder="input names of cast in the content..."></textarea>
 		</div>
 
 		<div class="content-overview">
-			<label for="content-overview">Content overview</label><br>
-			 <textarea name="content-overview" id="content-overview" placeholder="write something about the content..." required></textarea> 
+			<label for="content-overview">Content overview</label>
+			 <textarea name="content-overview" id="content-overview" placeholder="write something about the content..." rows="10" required></textarea> 
 		</div>
-
-
 
 
 		<div class="immediate-publish">
 			<label for="immediate-publish">Publish immediately</label>
+			<p>Select "yes" if you want this post to be published immediately.</p>
 			<select name="immediate-publish" id="immediate-publish">
 				<option value="0">no</option>
 				<option value="1">yes</option>

@@ -523,6 +523,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #fc6917;
 }
+.file-input-fc .file-input-wrap input[type=file] button {
+  background: green;
+}
 .file-input-fc label {
   display: inline-block;
   background: rgba(34, 37, 70, 0.7);
@@ -871,6 +874,111 @@ h1, h2, h3, h4, h5, h6 {
 }
 .comment-section .comment-div form div button:hover {
   background: #222546;
+}
+
+.content-post-div form div, .edit-post-form-div form div {
+  margin: 2rem 0;
+}
+.content-post-div form div label, .edit-post-form-div form div label {
+  display: block;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.content-post-div form div p, .edit-post-form-div form div p {
+  font-size: 1.35rem;
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+.content-post-div form div p a:hover, .edit-post-form-div form div p a:hover {
+  text-decoration: none;
+  color: #222546;
+  border-bottom: 1px solid #fc6917;
+}
+.content-post-div form div input, .edit-post-form-div form div input {
+  padding: 0.5rem;
+  width: 50rem;
+  max-width: 100%;
+}
+.content-post-div form div select, .edit-post-form-div form div select {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 50rem;
+  border-radius: 0.6rem;
+  max-width: 100%;
+}
+.content-post-div form div select option, .edit-post-form-div form div select option {
+  padding: 0.5rem;
+  height: 3rem;
+  word-break: break-all;
+  word-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.content-post-div form div select option:hover, .edit-post-form-div form div select option:hover {
+  background: #fc6917;
+}
+.content-post-div form div #content-external-file, .edit-post-form-div form div #content-external-file {
+  font-family: monospace;
+}
+.content-post-div form div textarea, .edit-post-form-div form div textarea {
+  resize: none;
+  width: 50rem;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  max-width: 100%;
+}
+.content-post-div form div button, .edit-post-form-div form div button {
+  padding: 0.6rem 1rem;
+  background: #222546;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.content-post-div form div button:hover, .edit-post-form-div form div button:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #fc6917;
+}
+
+.select-edit-post-form-div {
+  margin: 3rem 0;
+}
+.select-edit-post-form-div select {
+  height: 3rem;
+  width: 50rem;
+  max-width: 100%;
+  border-radius: 0.6rem;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(1) {
+  background: rgba(252, 105, 23, 0.6);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(1):hover {
+  color: white;
+  background: #fc6917;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(2) {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(2):hover {
+  color: white;
+  background: red;
 }
 
 @media screen and (max-width: 1000px) {
