@@ -2,7 +2,7 @@
 
 #### _...online movie store_
 
-Sirimazone is a full-stack online movie web application for managing video contents. Sirimazone is built with SCSS, JavaScript, jQuery, AJAX, Parcel, PHP and MySQL.
+Sirimazone is a full-stack online movie web application for managing video contents. Sirimazone is built with SCSS, JavaScript, jQuery, AJAX, Parcel, PHP, PDO and MySQL.
 This project comprises features such as:
 - Admin registration system.
 - Admin login system.
