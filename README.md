@@ -48,7 +48,7 @@ Clone the repository
 ```bash
     npm run dev-scripts-no-php-server
 ```
-
+Create and uploadz directory for uploaded files
 
 [Pull requests](https://github.com/IGIfeanyichukwu/sirimazone/pulls) are highly welcome.
 
