@@ -6,9 +6,9 @@ Sirimazone is a full-stack online movie web application for managing video conte
 This project comprises features such as:
 - Admin registration system.
 - Admin login system.
-- File Upload System (with AJAX, both large and small files).
-- Redirection.
-- File deletion, File auto-rename on upload.
+- File upload system with progress measure(apt for both large and small files).
+- Clean Redirection.
+- File deletion, file auto-rename on upload.
 - Post creation, edit, deletion.
 - Post publish/unpublish, pin/unpin.
 - Comment system under posts.
