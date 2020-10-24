@@ -1,0 +1,12 @@
+PROJECT JOT
+
+Number of posts per page = 18
+
+
+DEFUALT ACCESSS ID INFO
+Access Name: defaultaccessname
+Access Key: defaultaccesskey
+
+DEFAULT USER
+Username: Ifex
+Password: Ifexpass
