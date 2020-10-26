@@ -8,15 +8,14 @@ This project comprises features such as:
 - Admin login system.
 - File upload system with progress measure(apt for both large and small files).
 - Clean Redirection.
+- Search system.
 - File deletion, file auto-rename on upload.
 - Post creation, edit, deletion.
 - Post publish/unpublish, pin/unpin.
 - Comment system under posts.
 
 
-## License
-
-Cyprobar is open source licensed under the MIT license.
+![view of sirimazone's search page](sshots/searchpage-sirimazone.png)
 
 ## Contributing
 
@@ -61,6 +60,9 @@ Create and uploadz directory for uploaded files
 
 [Pull requests](https://github.com/IGIfeanyichukwu/sirimazone/pulls) are highly welcome.
 
+## License
+
+Sirimazone is open source licensed under the MIT license.
 
 ### Author
 [I. G Ifeanyichuwku (Ifex)](https://ig-ifex.netlify.app)
