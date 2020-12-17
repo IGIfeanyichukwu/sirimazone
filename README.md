@@ -19,12 +19,12 @@ This project comprises features such as:
 
 ## Contributing
 
-If you happen to find any bug or you have a feature request, do well to [create an issue](https://github.com/IGIfeanyichukwu/sirimazone/issues) on it.
+If you happen to find any bug or you have a feature request, do well to [create an issue](https://github.com/IamGideonIdoko/sirimazone/issues) on it.
 
 Clone the repository 
 
 ```bash
-    git clone https://github.com/IGIfeanyichukwu/sirimazone.git
+    git clone https://github.com/IamGideonIdoko/sirimazone.git
 ```
 
 
@@ -58,11 +58,11 @@ Clone the repository
 ```
 Create an `uploadz` directory for uploaded files
 
-[Pull requests](https://github.com/IGIfeanyichukwu/sirimazone/pulls) are highly welcome.
+[Pull requests](https://github.com/IamGideonIdoko/sirimazone/pulls) are highly welcome.
 
 ## License
 
 Sirimazone is open source licensed under the MIT license.
 
 ### Author
-[I. G Ifeanyichuwku (Ifex)](https://ig-ifex.netlify.app)
+[Gideon Idoko](https://github.com/IamGideonIdoko)
